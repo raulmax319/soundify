@@ -29,6 +29,8 @@
 		F1C53EC827593657009361F1 /* AudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53EC727593657009361F1 /* AudioTrack.swift */; };
 		F1C53ECA27593660009361F1 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53EC927593660009361F1 /* Artist.swift */; };
 		F1C53ECE27593686009361F1 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53ECD27593686009361F1 /* UserProfile.swift */; };
+		F1C53ED2275949B5009361F1 /* Constants.plist in Resources */ = {isa = PBXBuildFile; fileRef = F1C53ED1275949B5009361F1 /* Constants.plist */; };
+		F1C53ED4275959E2009361F1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53ED3275959E2009361F1 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,8 @@
 		F1C53EC727593657009361F1 /* AudioTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioTrack.swift; sourceTree = "<group>"; };
 		F1C53EC927593660009361F1 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		F1C53ECD27593686009361F1 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		F1C53ED1275949B5009361F1 /* Constants.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Constants.plist; sourceTree = "<group>"; };
+		F1C53ED3275959E2009361F1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 				F1C53EA127592EB1009361F1 /* Views */,
 				F1C53EA027592EA3009361F1 /* Controllers */,
 				F1C53E9A27592E5B009361F1 /* Info.plist */,
+				F1C53ED1275949B5009361F1 /* Constants.plist */,
 			);
 			path = Soundify;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				F1C53E8C27592E58009361F1 /* AppDelegate.swift */,
 				F1C53E8E27592E58009361F1 /* SceneDelegate.swift */,
 				F1C53E9527592E5B009361F1 /* Assets.xcassets */,
+				F1C53ED3275959E2009361F1 /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -241,6 +247,7 @@
 			files = (
 				F1C53E9927592E5B009361F1 /* LaunchScreen.storyboard in Resources */,
 				F1C53E9627592E5B009361F1 /* Assets.xcassets in Resources */,
+				F1C53ED2275949B5009361F1 /* Constants.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +271,7 @@
 				F1C53EB2275934BD009361F1 /* AuthViewController.swift in Sources */,
 				F1C53E8D27592E58009361F1 /* AppDelegate.swift in Sources */,
 				F1C53ECE27593686009361F1 /* UserProfile.swift in Sources */,
+				F1C53ED4275959E2009361F1 /* Extensions.swift in Sources */,
 				F1C53EAE2759343F009361F1 /* LibraryViewController.swift in Sources */,
 				F1C53ECA27593660009361F1 /* Artist.swift in Sources */,
 				F1C53EBC27593516009361F1 /* PlaylistViewController.swift in Sources */,
