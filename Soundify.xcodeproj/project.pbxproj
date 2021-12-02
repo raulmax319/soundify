@@ -10,7 +10,6 @@
 		F1C53E8D27592E58009361F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53E8C27592E58009361F1 /* AppDelegate.swift */; };
 		F1C53E8F27592E58009361F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53E8E27592E58009361F1 /* SceneDelegate.swift */; };
 		F1C53E9127592E58009361F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53E9027592E58009361F1 /* ViewController.swift */; };
-		F1C53E9427592E58009361F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C53E9227592E58009361F1 /* Main.storyboard */; };
 		F1C53E9627592E5B009361F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C53E9527592E5B009361F1 /* Assets.xcassets */; };
 		F1C53E9927592E5B009361F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C53E9727592E5B009361F1 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,10 +19,12 @@
 		F1C53E8C27592E58009361F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C53E8E27592E58009361F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F1C53E9027592E58009361F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F1C53E9327592E58009361F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1C53E9527592E5B009361F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1C53E9827592E5B009361F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1C53E9A27592E5B009361F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1C53EA6275932E3009361F1 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		F1C53EA727593316009361F1 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		F1C53EA827593327009361F1 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +57,65 @@
 		F1C53E8B27592E58009361F1 /* Soundify */ = {
 			isa = PBXGroup;
 			children = (
-				F1C53E8C27592E58009361F1 /* AppDelegate.swift */,
-				F1C53E8E27592E58009361F1 /* SceneDelegate.swift */,
-				F1C53E9027592E58009361F1 /* ViewController.swift */,
-				F1C53E9227592E58009361F1 /* Main.storyboard */,
-				F1C53E9527592E5B009361F1 /* Assets.xcassets */,
-				F1C53E9727592E5B009361F1 /* LaunchScreen.storyboard */,
+				F1C53EA527592F1D009361F1 /* Resources */,
+				F1C53EA427592F13009361F1 /* Managers */,
+				F1C53EA327592F03009361F1 /* ViewModels */,
+				F1C53EA227592EFB009361F1 /* Models */,
+				F1C53EA127592EB1009361F1 /* Views */,
+				F1C53EA027592EA3009361F1 /* Controllers */,
 				F1C53E9A27592E5B009361F1 /* Info.plist */,
 			);
 			path = Soundify;
+			sourceTree = "<group>";
+		};
+		F1C53EA027592EA3009361F1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F1C53E9027592E58009361F1 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F1C53EA127592EB1009361F1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F1C53E9727592E5B009361F1 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F1C53EA227592EFB009361F1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1C53EA827593327009361F1 /* .gitkeep */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1C53EA327592F03009361F1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F1C53EA727593316009361F1 /* .gitkeep */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F1C53EA427592F13009361F1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F1C53EA6275932E3009361F1 /* .gitkeep */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		F1C53EA527592F1D009361F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F1C53E8C27592E58009361F1 /* AppDelegate.swift */,
+				F1C53E8E27592E58009361F1 /* SceneDelegate.swift */,
+				F1C53E9527592E5B009361F1 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +178,6 @@
 			files = (
 				F1C53E9927592E5B009361F1 /* LaunchScreen.storyboard in Resources */,
 				F1C53E9627592E5B009361F1 /* Assets.xcassets in Resources */,
-				F1C53E9427592E58009361F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +197,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F1C53E9227592E58009361F1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F1C53E9327592E58009361F1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F1C53E9727592E5B009361F1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,7 +336,6 @@
 				INFOPLIST_FILE = Soundify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -322,7 +363,6 @@
 				INFOPLIST_FILE = Soundify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
