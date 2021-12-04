@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F143F00B275AF63100757718 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143F00A275AF63100757718 /* AuthResponse.swift */; };
+		F1BBA93B275BCBB7009D7E51 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBA93A275BCBB7009D7E51 /* SettingsModels.swift */; };
 		F1C53E8D27592E58009361F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53E8C27592E58009361F1 /* AppDelegate.swift */; };
 		F1C53E8F27592E58009361F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53E8E27592E58009361F1 /* SceneDelegate.swift */; };
 		F1C53E9127592E58009361F1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53E9027592E58009361F1 /* HomeViewController.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		F143F009275AEF0000757718 /* Constants.example.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Constants.example.plist; sourceTree = "<group>"; };
 		F143F00A275AF63100757718 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		F1BBA93A275BCBB7009D7E51 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		F1C53E8927592E58009361F1 /* Soundify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C53E8C27592E58009361F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1C53E8E27592E58009361F1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 				F1C53EC927593660009361F1 /* Artist.swift */,
 				F1C53ECD27593686009361F1 /* UserProfile.swift */,
 				F143F00A275AF63100757718 /* AuthResponse.swift */,
+				F1BBA93A275BCBB7009D7E51 /* SettingsModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				F1C53ED4275959E2009361F1 /* Extensions.swift in Sources */,
 				F1C53EAE2759343F009361F1 /* LibraryViewController.swift in Sources */,
 				F1C53ECA27593660009361F1 /* Artist.swift in Sources */,
+				F1BBA93B275BCBB7009D7E51 /* SettingsModels.swift in Sources */,
 				F1C53EBC27593516009361F1 /* PlaylistViewController.swift in Sources */,
 				F1C53E8F27592E58009361F1 /* SceneDelegate.swift in Sources */,
 				F1C53EBA2759350A009361F1 /* PlayerViewController.swift in Sources */,

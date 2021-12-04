@@ -19,23 +19,23 @@ func readPlist(key: String) -> String {
 final class AuthManager {
   static let shared = AuthManager()
   
-  
+  private var refreshingToken = false
   
   struct Constants {
     static let clientID = readPlist(key: "clientID")
     static let clientSecret = readPlist(key: "clientSecret")
-    static let baseURL = readPlist(key: "baseURL")
+    static let signInURL = readPlist(key: "signInURL")
     static let scopes = NSDictionary(contentsOfFile: Bundle.main.path(forResource: "Constants", ofType: "plist")!)?.object(forKey: "scopes") as! [String]
     static let redirectURL = readPlist(key: "redirectURL")
     static let tokenURL = readPlist(key: "tokenURL")
+    
     
   }
   
   private init() {}
   
   public var signInURL: URL? {
-    print("\(Constants.baseURL)?response_type=code&client_id=\(Constants.clientID)&scope=\(Constants.scopes.joined(separator: "%20"))&redirect_uri=\(Constants.redirectURL)&show_dialog=TRUE")
-    return URL(string: "\(Constants.baseURL)?response_type=code&client_id=\(Constants.clientID)&scope=\(Constants.scopes.joined(separator: "%20"))&redirect_uri=\(Constants.redirectURL)&show_dialog=TRUE")
+    return URL(string: "\(Constants.signInURL)?response_type=code&client_id=\(Constants.clientID)&scope=\(Constants.scopes.joined(separator: "%20"))&redirect_uri=\(Constants.redirectURL)&show_dialog=TRUE")
   }
   
   var isSignedIn: Bool {
@@ -103,12 +103,36 @@ final class AuthManager {
     task.resume()
   }
   
+  private var onRefreshBlocks = [((String) -> Void)]()
+  
+  /// Supplies valid token to be used with Api calls
+  public func withValidToken(completion: @escaping (String) -> Void) {
+    guard !refreshingToken else {
+      onRefreshBlocks.append(completion)
+      return
+    }
+    if let token = accessToken, !shouldRefreshToken {
+      completion(token)
+      return
+    }
+    
+    refreshAccessToken(completion: {
+      [weak self] success in
+      if let token = self?.accessToken, success {
+        completion(token)
+      }
+    })
+  }
+  
   // refresh when needed
   public func refreshAccessToken(completion: @escaping (Bool) -> Void) {
-//    guard shouldRefreshToken else {
-//      completion(true)
-//      return
-//    }
+    guard !refreshingToken else {
+      return
+    }
+    guard shouldRefreshToken else {
+      completion(true)
+      return
+    }
     guard let refreshToken = self.refreshToken else {
       return
     }
@@ -117,6 +141,8 @@ final class AuthManager {
     guard let url = URL(string: Constants.tokenURL) else {
       return
     }
+    
+    refreshingToken = true
     
     var components = URLComponents()
     components.queryItems = [
@@ -139,6 +165,7 @@ final class AuthManager {
     
     let task = URLSession.shared.dataTask(with: request, completionHandler: {
       [weak self] data, _, error in
+      self?.refreshingToken = false
       guard let data = data, error == nil else {
         completion(false)
         return
@@ -146,6 +173,8 @@ final class AuthManager {
       
       do {
         let response = try JSONDecoder().decode(AuthResponse.self, from: data)
+        self?.onRefreshBlocks.forEach { $0(response.access_token) }
+        self?.onRefreshBlocks.removeAll()
         self?.cacheToken(result: response)
         completion(true)
       } catch {
@@ -158,11 +187,11 @@ final class AuthManager {
   
   private func cacheToken(result: AuthResponse) {
     UserDefaults.standard.setValue(result.access_token, forKey: "access_token")
-
+    
     if let refresh_token = result.refresh_token {
       UserDefaults.standard.setValue(refresh_token, forKey: "refresh_token")
     }
-
+    
     UserDefaults.standard.setValue(Date().addingTimeInterval(TimeInterval(result.expires_in)), forKey: "expiration_date")
   }
 }
