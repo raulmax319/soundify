@@ -30,8 +30,9 @@ final class ApiCaller {
 
         do {
           let response = try JSONDecoder().decode(User.self, from: data)
-          print(response)
+          completion(.success(response))
         } catch {
+          print(error.localizedDescription)
           completion(.failure(error))
         }
       })
