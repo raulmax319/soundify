@@ -11,12 +11,12 @@ struct User: Codable {
   let country: String
   let email: String
   let display_name: String
-  let explicit_content: [Bool]
-  let external_urls: [String]
-  let followers: [String: Int]
+  // let explicit_content: [String: Bool]
+  // let external_urls: [String]
+  // let followers: [String: Int]
   let id: String
   let product: String
-  let images: [UserImage]
+  // let images: [UserImage]
 }
 
 struct UserImage: Codable {
