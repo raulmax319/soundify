@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController, UITableViewDelegate, UITableViewD
     models.append("Full Name: \(model.display_name)")
     models.append("Email Address: \(model.display_name)")
     models.append("User ID: \(model.id)")
-    //models.append("Plan: \(model.product)")
+    models.append("Plan: \(model.product)")
     tableView.reloadData()
   }
   
