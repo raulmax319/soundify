@@ -21,6 +21,4 @@ struct User: Codable {
 
 struct UserImage: Codable {
   let url: String
-  let width: Int
-  let height: Int
 }
