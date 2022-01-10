@@ -69,8 +69,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let model = sections[indexPath.section].options[indexPath.row]
     let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    var config = cell.defaultContentConfiguration()
-    config.text = model.title
+    var content = cell.defaultContentConfiguration()
+    content.text = model.title
+    cell.contentConfiguration = content
     return cell
   }
   
