@@ -40,6 +40,25 @@ final class ApiCaller {
     })
   }
   
+  public func getNewReleases(completion: @escaping (Result<String, Error>) -> Void) {
+    makeRequest(with: URL(string: "\(Constants.baseURL)/browse/new-releases?limit=50"), type: .GET) {
+      request in
+      let task = URLSession.shared.dataTask(with: request) { data, _, error in
+        guard let data = data, error == nil else {
+          return
+        }
+        
+        do {
+          let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+          //print(response)
+        } catch {
+          completion(.failure(error))
+        }
+      }
+      task.resume()
+    }
+  }
+  
   // MARK: - Private
   
   enum HTTPMethod: String {
@@ -51,6 +70,7 @@ final class ApiCaller {
     AuthManager.shared.withValidToken(completion: { token in
       guard let apiURL = url else { return }
       var request = URLRequest(url: apiURL)
+      // print(token)
       request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
       request.httpMethod = type.rawValue
       request.timeoutInterval = 30
