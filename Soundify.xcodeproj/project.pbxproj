@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		10945A6C396AE0FF4AB5EBCB /* Pods_Soundify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B8D69A431F1B4E9BB3263C /* Pods_Soundify.framework */; };
 		F143F00B275AF63100757718 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143F00A275AF63100757718 /* AuthResponse.swift */; };
+		F18884CA278F5D4A00CDDB68 /* NewReleases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884C9278F5D4A00CDDB68 /* NewReleases.swift */; };
+		F18884CC278F5EEB00CDDB68 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884CB278F5EEB00CDDB68 /* Image.swift */; };
+		F18884CE278F724A00CDDB68 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884CD278F724A00CDDB68 /* Albums.swift */; };
+		F18884D0278F728300CDDB68 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884CF278F728300CDDB68 /* Item.swift */; };
 		F1BBA93B275BCBB7009D7E51 /* SettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBA93A275BCBB7009D7E51 /* SettingsModels.swift */; };
 		F1C53E8D27592E58009361F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53E8C27592E58009361F1 /* AppDelegate.swift */; };
 		F1C53E8F27592E58009361F1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C53E8E27592E58009361F1 /* SceneDelegate.swift */; };
@@ -42,6 +46,10 @@
 		9DB4C61B29D9443DBEACBBEC /* Pods-Soundify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.debug.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.debug.xcconfig"; sourceTree = "<group>"; };
 		F143F009275AEF0000757718 /* Constants.example.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Constants.example.plist; sourceTree = "<group>"; };
 		F143F00A275AF63100757718 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		F18884C9278F5D4A00CDDB68 /* NewReleases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleases.swift; sourceTree = "<group>"; };
+		F18884CB278F5EEB00CDDB68 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		F18884CD278F724A00CDDB68 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
+		F18884CF278F728300CDDB68 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F1BBA93A275BCBB7009D7E51 /* SettingsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModels.swift; sourceTree = "<group>"; };
 		F1C53E8927592E58009361F1 /* Soundify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1C53E8C27592E58009361F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -98,7 +106,6 @@
 				9DB4C61B29D9443DBEACBBEC /* Pods-Soundify.debug.xcconfig */,
 				96545CFB220571E043BA6C52 /* Pods-Soundify.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -162,6 +169,10 @@
 				F1C53ECD27593686009361F1 /* UserProfile.swift */,
 				F143F00A275AF63100757718 /* AuthResponse.swift */,
 				F1BBA93A275BCBB7009D7E51 /* SettingsModels.swift */,
+				F18884C9278F5D4A00CDDB68 /* NewReleases.swift */,
+				F18884CB278F5EEB00CDDB68 /* Image.swift */,
+				F18884CD278F724A00CDDB68 /* Albums.swift */,
+				F18884CF278F728300CDDB68 /* Item.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -337,12 +348,15 @@
 			files = (
 				F1C53EAC27593415009361F1 /* SearchViewController.swift in Sources */,
 				F1C53EC62759364A009361F1 /* Playlist.swift in Sources */,
+				F18884CA278F5D4A00CDDB68 /* NewReleases.swift in Sources */,
 				F1C53EC02759360E009361F1 /* AuthManager.swift in Sources */,
 				F1C53EBE27593595009361F1 /* SearchResultsViewController.swift in Sources */,
+				F18884CE278F724A00CDDB68 /* Albums.swift in Sources */,
 				F1C53EB4275934CE009361F1 /* WelcomeViewController.swift in Sources */,
 				F1C53EB8275934F8009361F1 /* ProfileViewController.swift in Sources */,
 				F1C53EAA275933F0009361F1 /* TabBarViewController.swift in Sources */,
 				F1C53EC427593627009361F1 /* HapticsManager.swift in Sources */,
+				F18884D0278F728300CDDB68 /* Item.swift in Sources */,
 				F143F00B275AF63100757718 /* AuthResponse.swift in Sources */,
 				F1C53EC827593657009361F1 /* AudioTrack.swift in Sources */,
 				F1C53E9127592E58009361F1 /* HomeViewController.swift in Sources */,
@@ -358,6 +372,7 @@
 				F1C53EBA2759350A009361F1 /* PlayerViewController.swift in Sources */,
 				F1C53EC22759361C009361F1 /* APICaller.swift in Sources */,
 				F1C53EB6275934E5009361F1 /* SettingsViewController.swift in Sources */,
+				F18884CC278F5EEB00CDDB68 /* Image.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@ final class ApiCaller {
   
   private init() {}
   
+  // MARK: - Constants
   struct Constants {
     static let baseURL = readPlist(key: "baseURLV1")
   }
@@ -40,7 +41,7 @@ final class ApiCaller {
     })
   }
   
-  public func getNewReleases(completion: @escaping (Result<String, Error>) -> Void) {
+  public func getNewReleases(completion: @escaping (Result<NewReleasesResponse, Error>) -> Void) {
     makeRequest(with: URL(string: "\(Constants.baseURL)/browse/new-releases?limit=50"), type: .GET) {
       request in
       let task = URLSession.shared.dataTask(with: request) { data, _, error in
@@ -49,9 +50,11 @@ final class ApiCaller {
         }
         
         do {
-          let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-          //print(response)
+          let response = try JSONDecoder().decode(NewReleasesResponse.self, from: data)
+          //completion(.success(response))
+          print(response)
         } catch {
+          print(error.localizedDescription)
           completion(.failure(error))
         }
       }
