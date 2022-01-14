@@ -18,10 +18,18 @@ class HomeViewController: UIViewController {
   }
   
   private func fetchData() {
-    ApiCaller.shared.getNewReleases { result in
+    ApiCaller.shared.getRecommendedGenres { result in
       switch result {
-      case .success(let _): break
-      case .failure(let _): break
+      case .success(let model):
+        let genres = model.genres
+        var seeds = Set<String>()
+        while seeds.count < 5 {
+          if let random = genres.randomElement() {
+            seeds.insert(random)
+          }
+        }
+        ApiCaller.shared.getRecommendations(genres: seeds) { _ in }
+      case .failure(_): break
       }
     }
   }

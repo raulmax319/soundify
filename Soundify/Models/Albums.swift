@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Albums
 struct Albums: Codable {
   let href: String
-  let items: [Item]?
+  let items: [NewReleasesItem]
   let next: String
   let offset: Int
   let total: Int

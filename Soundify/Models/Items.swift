@@ -7,8 +7,8 @@
 
 import Foundation
 
-// MARK: - Item
-struct Item: Codable {
+// MARK: - NewReleasesItem
+struct NewReleasesItem: Codable {
   let album_type: AlbumType
   let avaliable_markets: [String]?
   let external_urls: ExternalUrls
@@ -26,4 +26,21 @@ struct Item: Codable {
 enum AlbumType: String, Codable {
   case album
   case single
+}
+
+// MARK: - PlaylistItem
+struct PlaylistItem: Codable {
+  let description: String
+  let external_urls: ExternalUrls
+  let id: String
+  let images: [Image]
+  let name: String
+  let owner: Owner
+}
+
+// MARK: - Owner
+struct Owner: Codable {
+  let display_name: String
+  let external_urls: ExternalUrls
+  let id: String
 }
