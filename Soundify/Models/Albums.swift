@@ -15,3 +15,15 @@ struct Albums: Codable {
   let offset: Int
   let total: Int
 }
+
+struct Album: Codable {
+  let album_type: String
+  let artists: [Artist]
+  let available_markets: [String]
+  let external_urls: ExternalUrls
+  let href, id: String
+  let images: [Image]
+  let name, release_date: String
+  let total_tracks: Int
+  let type, uri: String
+}

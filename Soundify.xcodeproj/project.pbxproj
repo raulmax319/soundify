@@ -10,6 +10,9 @@
 		10945A6C396AE0FF4AB5EBCB /* Pods_Soundify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76B8D69A431F1B4E9BB3263C /* Pods_Soundify.framework */; };
 		F143F00B275AF63100757718 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143F00A275AF63100757718 /* AuthResponse.swift */; };
 		F144C7832790F5D20005C8D0 /* Recommendations.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144C7822790F5D20005C8D0 /* Recommendations.swift */; };
+		F144C786279207650005C8D0 /* NewReleaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144C785279207650005C8D0 /* NewReleaseCollectionViewCell.swift */; };
+		F144C7882792079C0005C8D0 /* FeaturedPlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144C7872792079C0005C8D0 /* FeaturedPlaylistCollectionViewCell.swift */; };
+		F144C78A279207C40005C8D0 /* RecommendedTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144C789279207C40005C8D0 /* RecommendedTrackCollectionViewCell.swift */; };
 		F18884CA278F5D4A00CDDB68 /* NewReleases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884C9278F5D4A00CDDB68 /* NewReleases.swift */; };
 		F18884CC278F5EEB00CDDB68 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884CB278F5EEB00CDDB68 /* Image.swift */; };
 		F18884CE278F724A00CDDB68 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884CD278F724A00CDDB68 /* Albums.swift */; };
@@ -48,6 +51,9 @@
 		F143F009275AEF0000757718 /* Constants.example.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Constants.example.plist; sourceTree = "<group>"; };
 		F143F00A275AF63100757718 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		F144C7822790F5D20005C8D0 /* Recommendations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recommendations.swift; sourceTree = "<group>"; };
+		F144C785279207650005C8D0 /* NewReleaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		F144C7872792079C0005C8D0 /* FeaturedPlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
+		F144C789279207C40005C8D0 /* RecommendedTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCollectionViewCell.swift; sourceTree = "<group>"; };
 		F18884C9278F5D4A00CDDB68 /* NewReleases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleases.swift; sourceTree = "<group>"; };
 		F18884CB278F5EEB00CDDB68 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F18884CD278F724A00CDDB68 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
@@ -60,7 +66,6 @@
 		F1C53E9527592E5B009361F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1C53E9827592E5B009361F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1C53E9A27592E5B009361F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F1C53EA727593316009361F1 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		F1C53EA9275933F0009361F1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F1C53EAB27593415009361F1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F1C53EAD2759343F009361F1 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +114,16 @@
 				96545CFB220571E043BA6C52 /* Pods-Soundify.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F144C7842792071B0005C8D0 /* Browse */ = {
+			isa = PBXGroup;
+			children = (
+				F144C785279207650005C8D0 /* NewReleaseCollectionViewCell.swift */,
+				F144C7872792079C0005C8D0 /* FeaturedPlaylistCollectionViewCell.swift */,
+				F144C789279207C40005C8D0 /* RecommendedTrackCollectionViewCell.swift */,
+			);
+			path = Browse;
 			sourceTree = "<group>";
 		};
 		F1C53E8027592E58009361F1 = {
@@ -183,7 +198,7 @@
 		F1C53EA327592F03009361F1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				F1C53EA727593316009361F1 /* .gitkeep */,
+				F144C7842792071B0005C8D0 /* Browse */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -357,13 +372,16 @@
 				F18884CE278F724A00CDDB68 /* Albums.swift in Sources */,
 				F1C53EB4275934CE009361F1 /* WelcomeViewController.swift in Sources */,
 				F1C53EB8275934F8009361F1 /* ProfileViewController.swift in Sources */,
+				F144C78A279207C40005C8D0 /* RecommendedTrackCollectionViewCell.swift in Sources */,
 				F1C53EAA275933F0009361F1 /* TabBarViewController.swift in Sources */,
 				F144C7832790F5D20005C8D0 /* Recommendations.swift in Sources */,
 				F1C53EC427593627009361F1 /* HapticsManager.swift in Sources */,
 				F18884D0278F728300CDDB68 /* Items.swift in Sources */,
 				F143F00B275AF63100757718 /* AuthResponse.swift in Sources */,
 				F1C53EC827593657009361F1 /* AudioTrack.swift in Sources */,
+				F144C786279207650005C8D0 /* NewReleaseCollectionViewCell.swift in Sources */,
 				F1C53E9127592E58009361F1 /* HomeViewController.swift in Sources */,
+				F144C7882792079C0005C8D0 /* FeaturedPlaylistCollectionViewCell.swift in Sources */,
 				F1C53EB2275934BD009361F1 /* AuthViewController.swift in Sources */,
 				F1C53E8D27592E58009361F1 /* AppDelegate.swift in Sources */,
 				F1C53ECE27593686009361F1 /* UserProfile.swift in Sources */,

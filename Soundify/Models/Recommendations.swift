@@ -11,3 +11,8 @@ import Foundation
 struct RecommendedGenresResponse: Codable {
   let genres: [String]
 }
+
+// MARK: - RecommendationsResponse
+struct RecommendationsResponse: Codable {
+  let tracks: [AudioTrack]
+}
