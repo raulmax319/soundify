@@ -13,6 +13,7 @@
 		F144C786279207650005C8D0 /* NewReleaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144C785279207650005C8D0 /* NewReleaseCollectionViewCell.swift */; };
 		F144C7882792079C0005C8D0 /* FeaturedPlaylistCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144C7872792079C0005C8D0 /* FeaturedPlaylistCollectionViewCell.swift */; };
 		F144C78A279207C40005C8D0 /* RecommendedTrackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144C789279207C40005C8D0 /* RecommendedTrackCollectionViewCell.swift */; };
+		F144C78C279722950005C8D0 /* NewReleasesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F144C78B279722950005C8D0 /* NewReleasesCell.swift */; };
 		F18884CA278F5D4A00CDDB68 /* NewReleases.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884C9278F5D4A00CDDB68 /* NewReleases.swift */; };
 		F18884CC278F5EEB00CDDB68 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884CB278F5EEB00CDDB68 /* Image.swift */; };
 		F18884CE278F724A00CDDB68 /* Albums.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18884CD278F724A00CDDB68 /* Albums.swift */; };
@@ -54,6 +55,7 @@
 		F144C785279207650005C8D0 /* NewReleaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		F144C7872792079C0005C8D0 /* FeaturedPlaylistCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistCollectionViewCell.swift; sourceTree = "<group>"; };
 		F144C789279207C40005C8D0 /* RecommendedTrackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTrackCollectionViewCell.swift; sourceTree = "<group>"; };
+		F144C78B279722950005C8D0 /* NewReleasesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleasesCell.swift; sourceTree = "<group>"; };
 		F18884C9278F5D4A00CDDB68 /* NewReleases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewReleases.swift; sourceTree = "<group>"; };
 		F18884CB278F5EEB00CDDB68 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		F18884CD278F724A00CDDB68 /* Albums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Albums.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		F1C53EA327592F03009361F1 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F144C78B279722950005C8D0 /* NewReleasesCell.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				F1C53EC427593627009361F1 /* HapticsManager.swift in Sources */,
 				F18884D0278F728300CDDB68 /* Items.swift in Sources */,
 				F143F00B275AF63100757718 /* AuthResponse.swift in Sources */,
+				F144C78C279722950005C8D0 /* NewReleasesCell.swift in Sources */,
 				F1C53EC827593657009361F1 /* AudioTrack.swift in Sources */,
 				F144C786279207650005C8D0 /* NewReleaseCollectionViewCell.swift in Sources */,
 				F1C53E9127592E58009361F1 /* HomeViewController.swift in Sources */,

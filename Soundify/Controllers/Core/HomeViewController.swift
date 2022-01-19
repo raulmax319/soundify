@@ -8,9 +8,9 @@
 import UIKit
 
 enum BrowseSectionType {
-  case newReleases
-  case featuredPlaylists
-  case recommendedTracks
+  case newReleases(viewModel: [NewReleasesCell])
+  case featuredPlaylists(viewModel: [NewReleasesCell])
+  case recommendedTracks(viewModel: [NewReleasesCell])
 }
 
 class HomeViewController: UIViewController {
@@ -26,6 +26,8 @@ class HomeViewController: UIViewController {
     
     return spinner
   }()
+  
+  private var sections = [BrowseSectionType]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,12 +47,53 @@ class HomeViewController: UIViewController {
   private func configureCollectionView() {
     view.addSubview(collectionView)
     collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+    collectionView.register(NewReleaseCollectionViewCell.self, forCellWithReuseIdentifier: NewReleaseCollectionViewCell.identifier)
+    collectionView.register(FeaturedPlaylistCollectionViewCell.self, forCellWithReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier)
+    collectionView.register(RecommendedTrackCollectionViewCell.self, forCellWithReuseIdentifier: RecommendedTrackCollectionViewCell.identifier)
     collectionView.dataSource = self
     collectionView.delegate = self
   }
   
   // Featured Playlists, Recommended Tracks, New Releases
   private func fetchData() {
+    let group = DispatchGroup()
+    
+    group.enter()
+    group.enter()
+    group.enter()
+    
+    var newReleases: NewReleasesResponse?
+    var featuredPlaylist: FeaturedPlaylistsResponse?
+    var recommendations: RecommendationsResponse?
+    
+    // MARK: - New Releases
+    ApiCaller.shared.getNewReleases { result in
+      defer {
+        group.leave()
+      }
+      switch result {
+      case .success(let model):
+        newReleases = model
+      case .failure(let err):
+        print(err.localizedDescription)
+      }
+    }
+    
+    // MARK: - Featured Playlists
+    ApiCaller.shared.getFeaturedPlaylists { result in
+      defer {
+        group.leave()
+      }
+      switch result {
+      case .success(let model):
+        featuredPlaylist = model
+      case .failure(let err):
+        print(err.localizedDescription)
+      }
+    }
+    
+    
+    // MARK: - Recommended Tracks
     ApiCaller.shared.getRecommendedGenres { result in
       switch result {
       case .success(let model):
@@ -61,9 +104,27 @@ class HomeViewController: UIViewController {
             seeds.insert(random)
           }
         }
-        ApiCaller.shared.getRecommendations(genres: seeds) { _ in }
+        ApiCaller.shared.getRecommendations(genres: seeds) { recomResult in
+          defer {
+            group.leave()
+          }
+          switch recomResult {
+          case .success(let model):
+            recommendations = model
+          case .failure(let err):
+            print(err.localizedDescription)
+          }
+        }
       case .failure(_): break
       }
+    }
+    
+    group.notify(queue: .main) {
+      guard let newAlbums = newReleases?.albums.items,
+            let playlists = featuredPlaylist?.playlists.items,
+            let tracks = recommendations?.tracks else { return }
+      
+      self.configureModels(album: newAlbums, playlists: playlists, tracks: tracks)
     }
   }
   
@@ -79,31 +140,53 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+    let type = sections[indexPath.section]
     
-    switch indexPath.section {
-    case 0:
-      cell.backgroundColor = .systemGreen
-      break
-    case 1:
-      cell.backgroundColor = .systemRed
-      break
-    case 2:
+    switch type {
+      
+    case .newReleases(let viewModels):
+      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewReleaseCollectionViewCell.identifier, for: indexPath) as? NewReleaseCollectionViewCell else { return UICollectionViewCell() }
+      
+      let viewModel = viewModels[indexPath.row]
+      cell.configure(with: viewModel)
+      return cell
+    case .featuredPlaylists(let viewModels):
+      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier, for: indexPath) as? FeaturedPlaylistCollectionViewCell else { return UICollectionViewCell() }
       cell.backgroundColor = .systemBlue
-      break
-    default:
-      cell.backgroundColor = .systemGreen
+      return cell
+    case .recommendedTracks(let viewModels):
+      guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier, for: indexPath) as? RecommendedTrackCollectionViewCell else { return UICollectionViewCell() }
+      cell.backgroundColor = .systemOrange
+      return cell
     }
-    
-    return cell
   }
   
   func numberOfSections(in collectionView: UICollectionView) -> Int {
-    return 3
+    return sections.count
   }
   
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 6
+    let type = sections[section]
+    
+    switch type {
+      
+    case .newReleases(let viewModel):
+      return viewModel.count
+    case .featuredPlaylists(let viewModel):
+      return viewModel.count
+    case .recommendedTracks(let viewModel):
+      return viewModel.count
+    }
+  }
+  
+  // MARK: - Configure Models
+  private func configureModels(album: [NewReleasesItem], playlists: [PlaylistItem], tracks: [AudioTrack]) {
+    sections.append(.newReleases(viewModel: album.compactMap {
+      return NewReleasesCell(name: $0.name, artworkUrl: URL(string: $0.images.first?.url ?? ""), numberOfTracks: $0.total_tracks, artistName: $0.artists.first?.name ?? "")
+    }))
+    sections.append(.featuredPlaylists(viewModel: []))
+    sections.append(.recommendedTracks(viewModel: []))
+    collectionView.reloadData()
   }
   
   // MARK: - CreateSectionLayout
