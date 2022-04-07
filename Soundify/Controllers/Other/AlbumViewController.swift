@@ -1,17 +1,18 @@
 //
-//  PlaylistViewController.swift
+//  AlbumViewController.swift
 //  Soundify
 //
-//  Created by Raul Max on 02/12/21.
+//  Created by Raul Max on 07/04/22.
 //
 
 import UIKit
 
-class PlaylistViewController: UIViewController {
-  private let playlist: PlaylistItem
+class AlbumViewController: UIViewController {
   
-  init(playlist: PlaylistItem) {
-    self.playlist = playlist
+  private let album: NewReleasesItem
+  
+  init(album: NewReleasesItem) {
+    self.album = album
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -21,9 +22,10 @@ class PlaylistViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    title = playlist.name
+    title = album.name
     view.backgroundColor = .systemBackground
-    ApiCaller.shared.getPlaylistsDetails(for: playlist) {
+    
+    ApiCaller.shared.getAlbumsDetails(for: album) {
       result in
       DispatchQueue.main.async {
         switch result {
