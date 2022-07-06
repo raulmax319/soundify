@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750BC0228A8392666BF42CB2 /* Pods_Soundify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 242A81F66614822CC6B4ACA8 /* Pods_Soundify.framework */; };
 		F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB9412875289800F76EB3 /* AppDelegate.swift */; };
 		F11BB94B2875289800F76EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94A2875289800F76EB3 /* Assets.xcassets */; };
 		F11BB94E2875289800F76EB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94C2875289800F76EB3 /* LaunchScreen.storyboard */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C1EC1A1347A53E01B40484D /* Pods-Soundify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.release.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.release.xcconfig"; sourceTree = "<group>"; };
+		242A81F66614822CC6B4ACA8 /* Pods_Soundify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA819247EF9474B51C5F69AB /* Pods-Soundify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.debug.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.debug.xcconfig"; sourceTree = "<group>"; };
 		F11BB93E2875289800F76EB3 /* Soundify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BB9412875289800F76EB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F11BB94A2875289800F76EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,17 +37,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750BC0228A8392666BF42CB2 /* Pods_Soundify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60FDFEFBE008427815BF1FF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				242A81F66614822CC6B4ACA8 /* Pods_Soundify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A1DD0884923E3AD0A95DDFEC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA819247EF9474B51C5F69AB /* Pods-Soundify.debug.xcconfig */,
+				0C1EC1A1347A53E01B40484D /* Pods-Soundify.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F11BB9352875289800F76EB3 = {
 			isa = PBXGroup;
 			children = (
 				F11BB9402875289800F76EB3 /* Soundify */,
 				F11BB93F2875289800F76EB3 /* Products */,
+				A1DD0884923E3AD0A95DDFEC /* Pods */,
+				60FDFEFBE008427815BF1FF7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +166,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F11BB9522875289800F76EB3 /* Build configuration list for PBXNativeTarget "Soundify" */;
 			buildPhases = (
+				07E4EFB80F270C8739BF78A7 /* [CP] Check Pods Manifest.lock */,
 				F11BB93A2875289800F76EB3 /* Sources */,
 				F11BB93B2875289800F76EB3 /* Frameworks */,
 				F11BB93C2875289800F76EB3 /* Resources */,
@@ -198,6 +224,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07E4EFB80F270C8739BF78A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Soundify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F11BB93A2875289800F76EB3 /* Sources */ = {
@@ -342,6 +393,7 @@
 		};
 		F11BB9532875289800F76EB3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA819247EF9474B51C5F69AB /* Pods-Soundify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -370,6 +422,7 @@
 		};
 		F11BB9542875289800F76EB3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C1EC1A1347A53E01B40484D /* Pods-Soundify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
