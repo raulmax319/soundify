@@ -4,5 +4,5 @@ platform :ios, '13.0'
 target 'Soundify' do
   use_frameworks!
 
-  pod 'BubbleTask', :git => 'git@github.com:raulmax319/bubbletask.git'
+  pod 'BubbleTask/Debug', :git => 'git@github.com:raulmax319/bubbletask.git'
 end

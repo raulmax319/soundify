@@ -14,6 +14,12 @@ class WelcomeViewController: UIViewController {
     return view
   }()
   
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    title = "Soundify"
+  }
+  
   override func loadView() {
     view = welcomeView
   }

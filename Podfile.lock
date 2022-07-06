@@ -1,10 +1,8 @@
 PODS:
-  - BubbleTask (0.1.0):
-    - BubbleTask/Release (= 0.1.0)
-  - BubbleTask/Release (0.1.0)
+  - BubbleTask/Debug (0.1.0)
 
 DEPENDENCIES:
-  - "BubbleTask (from `git@github.com:raulmax319/bubbletask.git`)"
+  - "BubbleTask/Debug (from `git@github.com:raulmax319/bubbletask.git`)"
 
 EXTERNAL SOURCES:
   BubbleTask:
@@ -18,6 +16,6 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   BubbleTask: 27acde0ca14305363654addcca3f6d7af5469722
 
-PODFILE CHECKSUM: 51e03e4e5eb9cb45c142751a593161c32c328987
+PODFILE CHECKSUM: 6e5c32d9400fec1115314643815be7ea9634a54c
 
 COCOAPODS: 1.11.3
