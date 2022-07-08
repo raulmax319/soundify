@@ -18,6 +18,7 @@
 		F17153952875E80A00B6126B /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17153942875E80A00B6126B /* HttpPostClient.swift */; };
 		F17153972875EA8C00B6126B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17153962875EA8C00B6126B /* Response.swift */; };
 		F17153992875EAFF00B6126B /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17153982875EAFF00B6126B /* HttpClient.swift */; };
+		F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */; };
 		F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1428760F69008EF0DF /* HttpError.swift */; };
 		F1BECC1728761096008EF0DF /* UnexpectedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1628761096008EF0DF /* UnexpectedError.swift */; };
 		F1BECC1928761350008EF0DF /* NoDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1828761350008EF0DF /* NoDataError.swift */; };
@@ -47,6 +48,7 @@
 		F17153942875E80A00B6126B /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
 		F17153962875EA8C00B6126B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		F17153982875EAFF00B6126B /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		F1BECC1428760F69008EF0DF /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		F1BECC1628761096008EF0DF /* UnexpectedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedError.swift; sourceTree = "<group>"; };
 		F1BECC1828761350008EF0DF /* NoDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataError.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				F11BB95D28752A6D00F76EB3 /* WelcomeCoordinator.swift */,
+				F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -398,6 +401,7 @@
 				F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */,
 				F11BB96028752B5A00F76EB3 /* WelcomeViewController.swift in Sources */,
 				F17153992875EAFF00B6126B /* HttpClient.swift in Sources */,
+				F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */,
 				F1BECC2328762DCA008EF0DF /* Authentication.swift in Sources */,
 				F1BECC2928763661008EF0DF /* Constants.swift in Sources */,
 				F1BECC2F28764013008EF0DF /* SignInView.swift in Sources */,
@@ -512,6 +516,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raulmax319.Soundify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SIGN_IN_URL = "https://accounts.spotify.com/authorize";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -596,6 +601,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raulmax319.Soundify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SIGN_IN_URL = "https://accounts.spotify.com/authorize";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

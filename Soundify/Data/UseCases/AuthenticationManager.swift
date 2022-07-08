@@ -12,6 +12,12 @@ final class AuthenticationManager {
   
   private init() {}
   
+  public var signInURL: URL? {
+    return URL(
+      string: "\(Constants.signInURL)?response_type=code&client_id=\(Constants.clientID)&scope=\(Constants.scopes.joined(separator: "%20"))&redirect_uri=\(Constants.redirectURL)&show_dialog=TRUE"
+    )
+  }
+  
   var isSignedIn: Bool {
     return false
   }

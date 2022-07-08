@@ -8,15 +8,13 @@
 import UIKit
 
 class WelcomeCoordinator: Coordinator {
-  let navigation: UINavigationController
+  internal let navigationController: UINavigationController
   
   init(with navigationController: UINavigationController) {
-    self.navigation = navigationController
+    self.navigationController = navigationController
   }
   
   func start() {
-    let welcomeVc = WelcomeViewController()
-    
-    navigation.pushViewController(welcomeVc, animated: true)
+    navigationController.pushViewController(WelcomeViewController(), animated: true)
   }
 }

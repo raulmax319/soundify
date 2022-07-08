@@ -2,12 +2,25 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>SCOPES</key>
+	<array>
+		<string>user-read-private</string>
+		<string>playlist-modify-public</string>
+		<string>playlist-read-private</string>
+		<string>playlist-modify-private</string>
+		<string>user-follow-read</string>
+		<string>user-library-modify</string>
+		<string>user-library-read</string>
+		<string>user-read-email</string>
+	</array>
 	<key>CLIENT_SECRET</key>
 	<string>$(CLIENT_SECRET)</string>
 	<key>CLIENT_ID</key>
 	<string>$(CLIENT_ID)</string>
 	<key>HTTP_URLS</key>
 	<dict>
+		<key>SIGN_IN_URL</key>
+		<string>${SIGN_IN_URL}</string>
 		<key>BASE_URL</key>
 		<string>${BASE_URL}</string>
 	</dict>
