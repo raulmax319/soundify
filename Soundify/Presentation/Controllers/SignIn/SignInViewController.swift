@@ -8,7 +8,9 @@
 import UIKit
 import WebKit
 
-class SignInViewController: UIViewController {  
+class SignInViewController: UIViewController {
+  public var completionHandler: ((Bool) -> Void)?
+  
   lazy var signInView: SignInView = {
     let view = SignInView()
     
@@ -19,6 +21,9 @@ class SignInViewController: UIViewController {
     super.viewDidLoad()
     
     title = "Sign In"
+    
+    guard let url = AuthenticationManager.shared.signInURL else { return }
+    signInView.load(URLRequest(url: url))
   }
   
   override func loadView() {
@@ -39,10 +44,18 @@ extension SignInViewController: WKNavigationDelegate {
       )?.queryItems?.first(where: { $0.name == "code" })?.value else {
         return
       }
+      await self.setHiddenWebView()
       
-      //      let s = await AuthenticationManager.shared.exchangeCodzeForToken(code: code)
+      let success = await RemoteAuthentication().auth(code: code)
+      
+      await self.completionHandler?(success)
       await self.navigationController?.popToRootViewController(animated: true)
     }
-    webView.isHidden = true
+  }
+}
+
+extension SignInViewController {
+  private func setHiddenWebView() {
+    signInView.isHidden = true
   }
 }

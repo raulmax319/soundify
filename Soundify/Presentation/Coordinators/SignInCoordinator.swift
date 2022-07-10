@@ -18,11 +18,27 @@ class SignInCoordinator: NSObject, Coordinator {
   
   func start() {
     let signInVc = SignInViewController()
-    
-    guard let url = AuthenticationManager.shared.signInURL else { return }
-    signInVc.signInView.load(URLRequest(url: url))
+    signInVc.completionHandler = { [weak self] success in
+      self?.handleSignIn(success: success)
+    }
     
     signInVc.navigationItem.largeTitleDisplayMode = .never
     navigationController.pushViewController(signInVc, animated: true)
+  }
+}
+
+// MARK: - Private
+extension SignInCoordinator {
+  private func handleSignIn(success: Bool) {
+    guard success else {
+      let alert = UIAlertController(title: "Oops...", message: "Somgehing something", preferredStyle: .alert)
+      alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+      navigationController.present(alert, animated: true)
+      return
+    }
+    
+    let mainAppTabBarVc = MainTabBarViewController()
+    mainAppTabBarVc.modalPresentationStyle = .fullScreen
+    navigationController.present(mainAppTabBarVc, animated: true)
   }
 }

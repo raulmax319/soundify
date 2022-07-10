@@ -27,34 +27,35 @@ final class AuthenticationManager {
   }
   
   var isSignedIn: Bool {
-    return false
+    return accessToken != nil
   }
   
   private var accessToken: String? {
-    return nil
+    return StorageClient.shared.loadString(for: "access_token")
   }
   
   private var refreshToken: String? {
-    return nil
+    return StorageClient.shared.loadString(for: "refresh_token")
   }
   
   private var tokenExpirationDate: Date? {
-    return nil
+    return StorageClient.shared.load(Date.self, for: "expiration_date")
   }
   
   private var shouldRefreshToken: Bool {
-    return false
+    guard let tokenExpirationDate = tokenExpirationDate else {
+      return false
+    }
+    
+    let currentTime = Date()
+    let minutes: TimeInterval = 300
+    return currentTime.addingTimeInterval(minutes) >= tokenExpirationDate
   }
 }
 
-// MARK: - Public
-
-extension AuthenticationManager {}
-
 // MARK: - Private
-
 extension AuthenticationManager {
-  private func authenticate(with query: [URLQueryItem]) async throws -> AccountModel? {
+  private func getToken(with query: [URLQueryItem]) async throws -> AccountModel? {
     var components = URLComponents()
     components.queryItems = query
     
@@ -84,5 +85,30 @@ extension AuthenticationManager {
     let config = BubbleTaskConfig(baseUrl: Constants.authURL, headers: allHeaders)
     
     return config
+  }
+}
+
+// MARK: - GetToken
+extension AuthenticationManager: GetToken {
+  func exchangeCodeForToken(code: String) async -> AccountModel {
+    let body = [
+      URLQueryItem(name: "grant_type", value: "authorization_code"),
+      URLQueryItem(name: "code", value: code),
+      URLQueryItem(name: "redirect_uri", value: "https://raulmax319.netlify.app")
+    ]
+    
+    do {
+      let res = try await getToken(with: body)
+      return .init(
+        accessToken: res?.accessToken,
+        expiresIn: res?.expiresIn,
+        refreshToken: res?.refreshToken,
+        scope: res?.scope,
+        tokenType: res?.tokenType
+      )
+    } catch {
+      print("🛑 Error: \(error.localizedDescription)")
+      return .init()
+    }
   }
 }

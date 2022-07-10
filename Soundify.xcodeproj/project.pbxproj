@@ -15,14 +15,23 @@
 		F11BB95E28752A6D00F76EB3 /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB95D28752A6D00F76EB3 /* WelcomeCoordinator.swift */; };
 		F11BB96028752B5A00F76EB3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB95F28752B5A00F76EB3 /* WelcomeViewController.swift */; };
 		F11BB96328752CAE00F76EB3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB96228752CAE00F76EB3 /* WelcomeView.swift */; };
+		F13C83C9287AFE9F006D85C7 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C83C8287AFE9F006D85C7 /* UIViewExtension.swift */; };
+		F13C83CF287B013D006D85C7 /* CircularStd-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CB287B013D006D85C7 /* CircularStd-Black.ttf */; };
+		F13C83D0287B013D006D85C7 /* CircularStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CC287B013D006D85C7 /* CircularStd-Bold.ttf */; };
+		F13C83D1287B013D006D85C7 /* CircularStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CD287B013D006D85C7 /* CircularStd-Book.ttf */; };
+		F13C83D2287B013D006D85C7 /* CircularStd-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CE287B013D006D85C7 /* CircularStd-Medium.ttf */; };
+		F13C83D4287B01AE006D85C7 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C83D3287B01AE006D85C7 /* UIFontExtension.swift */; };
 		F17153952875E80A00B6126B /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17153942875E80A00B6126B /* HttpPostClient.swift */; };
 		F17153972875EA8C00B6126B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17153962875EA8C00B6126B /* Response.swift */; };
 		F17153992875EAFF00B6126B /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17153982875EAFF00B6126B /* HttpClient.swift */; };
 		F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */; };
 		F1AAF9202878768800CE7427 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF91F2878768800CE7427 /* AccountModel.swift */; };
-		F1AAF922287878D600CE7427 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF921287878D600CE7427 /* Authenticate.swift */; };
+		F1AAF922287878D600CE7427 /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF921287878D600CE7427 /* RemoteAuthentication.swift */; };
 		F1AAF92528787ACE00CE7427 /* StorageSaveClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF92428787ACE00CE7427 /* StorageSaveClient.swift */; };
 		F1AAF92828787B2400CE7427 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF92728787B2400CE7427 /* StorageClient.swift */; };
+		F1B183E3287B19630069CB6C /* GetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E2287B19630069CB6C /* GetToken.swift */; };
+		F1B183E5287B23ED0069CB6C /* StorageLoadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E4287B23ED0069CB6C /* StorageLoadClient.swift */; };
+		F1B183E8287B30990069CB6C /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E7287B30990069CB6C /* MainTabBarViewController.swift */; };
 		F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1428760F69008EF0DF /* HttpError.swift */; };
 		F1BECC1728761096008EF0DF /* UnexpectedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1628761096008EF0DF /* UnexpectedError.swift */; };
 		F1BECC1928761350008EF0DF /* NoDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1828761350008EF0DF /* NoDataError.swift */; };
@@ -47,14 +56,23 @@
 		F11BB95D28752A6D00F76EB3 /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		F11BB95F28752B5A00F76EB3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F11BB96228752CAE00F76EB3 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		F13C83C8287AFE9F006D85C7 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		F13C83CB287B013D006D85C7 /* CircularStd-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.ttf"; sourceTree = "<group>"; };
+		F13C83CC287B013D006D85C7 /* CircularStd-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.ttf"; sourceTree = "<group>"; };
+		F13C83CD287B013D006D85C7 /* CircularStd-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.ttf"; sourceTree = "<group>"; };
+		F13C83CE287B013D006D85C7 /* CircularStd-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Medium.ttf"; sourceTree = "<group>"; };
+		F13C83D3287B01AE006D85C7 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
 		F17153942875E80A00B6126B /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
 		F17153962875EA8C00B6126B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		F17153982875EAFF00B6126B /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
 		F1AAF91F2878768800CE7427 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
-		F1AAF921287878D600CE7427 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
+		F1AAF921287878D600CE7427 /* RemoteAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
 		F1AAF92428787ACE00CE7427 /* StorageSaveClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageSaveClient.swift; sourceTree = "<group>"; };
 		F1AAF92728787B2400CE7427 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
+		F1B183E2287B19630069CB6C /* GetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetToken.swift; sourceTree = "<group>"; };
+		F1B183E4287B23ED0069CB6C /* StorageLoadClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLoadClient.swift; sourceTree = "<group>"; };
+		F1B183E7287B30990069CB6C /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		F1BECC1428760F69008EF0DF /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		F1BECC1628761096008EF0DF /* UnexpectedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedError.swift; sourceTree = "<group>"; };
 		F1BECC1828761350008EF0DF /* NoDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataError.swift; sourceTree = "<group>"; };
@@ -177,6 +195,7 @@
 		F11BB95C28752A5100F76EB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F1B183E6287B30830069CB6C /* MainTabBar */,
 				F1BECC2B28763F78008EF0DF /* SignIn */,
 				F11BB96128752C1800F76EB3 /* Welcome */,
 			);
@@ -195,10 +214,22 @@
 		F11BB96428752FA400F76EB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F13C83CA287B0107006D85C7 /* Fonts */,
 				F11BB94A2875289800F76EB3 /* Assets.xcassets */,
 				F11BB94C2875289800F76EB3 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F13C83CA287B0107006D85C7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F13C83CB287B013D006D85C7 /* CircularStd-Black.ttf */,
+				F13C83CC287B013D006D85C7 /* CircularStd-Bold.ttf */,
+				F13C83CD287B013D006D85C7 /* CircularStd-Book.ttf */,
+				F13C83CE287B013D006D85C7 /* CircularStd-Medium.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		F17153912875E5A700B6126B /* Infrastructure */ = {
@@ -240,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				F1AAF92428787ACE00CE7427 /* StorageSaveClient.swift */,
+				F1B183E4287B23ED0069CB6C /* StorageLoadClient.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -250,6 +282,14 @@
 				F1AAF92728787B2400CE7427 /* StorageClient.swift */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		F1B183E6287B30830069CB6C /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F1B183E7287B30990069CB6C /* MainTabBarViewController.swift */,
+			);
+			path = MainTabBar;
 			sourceTree = "<group>";
 		};
 		F1BECC1228760F5C008EF0DF /* Domain */ = {
@@ -277,6 +317,8 @@
 			children = (
 				F1BECC1A28761569008EF0DF /* Environment.swift */,
 				F1BECC2828763661008EF0DF /* Constants.swift */,
+				F13C83C8287AFE9F006D85C7 /* UIViewExtension.swift */,
+				F13C83D3287B01AE006D85C7 /* UIFontExtension.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -285,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				F1BECC2228762DCA008EF0DF /* Authentication.swift */,
+				F1B183E2287B19630069CB6C /* GetToken.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -301,7 +344,7 @@
 		F1BECC2528762F6C008EF0DF /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				F1AAF921287878D600CE7427 /* Authenticate.swift */,
+				F1AAF921287878D600CE7427 /* RemoteAuthentication.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -383,7 +426,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13C83D2287B013D006D85C7 /* CircularStd-Medium.ttf in Resources */,
+				F13C83D1287B013D006D85C7 /* CircularStd-Book.ttf in Resources */,
+				F13C83CF287B013D006D85C7 /* CircularStd-Black.ttf in Resources */,
 				F11BB94E2875289800F76EB3 /* LaunchScreen.storyboard in Resources */,
+				F13C83D0287B013D006D85C7 /* CircularStd-Bold.ttf in Resources */,
 				F11BB94B2875289800F76EB3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,16 +484,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1B183E5287B23ED0069CB6C /* StorageLoadClient.swift in Sources */,
 				F1AAF9202878768800CE7427 /* AccountModel.swift in Sources */,
 				F11BB96328752CAE00F76EB3 /* WelcomeView.swift in Sources */,
+				F1B183E8287B30990069CB6C /* MainTabBarViewController.swift in Sources */,
 				F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */,
-				F1AAF922287878D600CE7427 /* Authenticate.swift in Sources */,
+				F1AAF922287878D600CE7427 /* RemoteAuthentication.swift in Sources */,
 				F11BB96028752B5A00F76EB3 /* WelcomeViewController.swift in Sources */,
 				F17153992875EAFF00B6126B /* HttpClient.swift in Sources */,
 				F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */,
 				F1BECC2328762DCA008EF0DF /* Authentication.swift in Sources */,
+				F1B183E3287B19630069CB6C /* GetToken.swift in Sources */,
 				F1BECC2928763661008EF0DF /* Constants.swift in Sources */,
 				F1BECC2F28764013008EF0DF /* SignInView.swift in Sources */,
+				F13C83D4287B01AE006D85C7 /* UIFontExtension.swift in Sources */,
 				F1BECC1928761350008EF0DF /* NoDataError.swift in Sources */,
 				F11BB95E28752A6D00F76EB3 /* WelcomeCoordinator.swift in Sources */,
 				F1BECC1B28761569008EF0DF /* Environment.swift in Sources */,
@@ -456,6 +507,7 @@
 				F1AAF92528787ACE00CE7427 /* StorageSaveClient.swift in Sources */,
 				F1BECC2D28763FE2008EF0DF /* SignInViewController.swift in Sources */,
 				F1BECC1728761096008EF0DF /* UnexpectedError.swift in Sources */,
+				F13C83C9287AFE9F006D85C7 /* UIViewExtension.swift in Sources */,
 				F11BB959287529AF00F76EB3 /* Coordinator.swift in Sources */,
 				F1AAF92828787B2400CE7427 /* StorageClient.swift in Sources */,
 				F17153972875EA8C00B6126B /* Response.swift in Sources */,

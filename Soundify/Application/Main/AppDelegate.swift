@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     if AuthenticationManager.shared.isSignedIn {
       Task.detached {
-        let _ = await AuthenticationManager.shared.refreshAccessToken()
+//        let _ = await AuthenticationManager.shared.refreshAccessToken()
         print("should navigate to tab bar controller")
       }
     } else {

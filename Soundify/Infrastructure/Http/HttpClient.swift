@@ -26,11 +26,11 @@ extension HttpClient: HttpPostClient {
     do {
       let res = try await client.post(to: endPoint, with: jsonBody)
       
-      guard let statusCode = res?.statusCode else {
+      guard let statusCode = res.statusCode else {
         return .failure(UnexpectedError())
       }
       
-      guard let data = res?.body else {
+      guard let data = res.body else {
         return .failure(NoDataError())
       }
       
@@ -57,6 +57,6 @@ extension HttpClient {
   }
   
   fileprivate static func setupConfig() -> BubbleTaskConfig {
-    return BubbleTaskConfig(baseUrl: Environment.baseURL, timeout: 30)
+    return BubbleTaskConfig(baseUrl: Constants.baseURL, timeout: 30)
   }
 }

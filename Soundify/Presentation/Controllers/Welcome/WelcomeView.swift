@@ -10,11 +10,12 @@ import UIKit
 class WelcomeView: UIView {
   let signInButton: UIButton = {
     let button = UIButton()
-    button.backgroundColor = .none
+    button.backgroundColor = .white
     button.layer.borderWidth = 2
     button.clipsToBounds = true
     button.setTitle("Sign In with Spotify", for: .normal)
-    button.setTitleColor(.systemBackground, for: .normal)
+    button.titleLabel?.font = UIFont.regular(ofSize: 16)
+    button.setTitleColor(UIColor.black, for: .normal)
     button.translatesAutoresizingMaskIntoConstraints = false
     
     return button
