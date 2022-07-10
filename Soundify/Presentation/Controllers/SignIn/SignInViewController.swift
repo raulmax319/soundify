@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import WebKit
 
-class SignInViewController: UIViewController {
+class SignInViewController: UIViewController {  
   lazy var signInView: SignInView = {
     let view = SignInView()
     
@@ -23,5 +24,25 @@ class SignInViewController: UIViewController {
   override func loadView() {
     super.loadView()
     view = signInView
+    
+    signInView.navigationDelegate = self
+  }
+}
+
+extension SignInViewController: WKNavigationDelegate {
+  func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+    Task.detached {
+      guard let url = await webView.url else { return }
+      
+      guard let code = URLComponents(
+        string: url.absoluteString
+      )?.queryItems?.first(where: { $0.name == "code" })?.value else {
+        return
+      }
+      
+      //      let s = await AuthenticationManager.shared.exchangeCodzeForToken(code: code)
+      await self.navigationController?.popToRootViewController(animated: true)
+    }
+    webView.isHidden = true
   }
 }

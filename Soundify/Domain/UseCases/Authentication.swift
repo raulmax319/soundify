@@ -8,5 +8,5 @@
 import Foundation
 
 protocol Authentication {
-  func auth() async -> String
+  func auth(code: String) async -> Bool
 }

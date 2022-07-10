@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05F19F5C3BB59E776C1615B1 /* Pods_Soundify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C05FA16048BD4285E3A27AC /* Pods_Soundify.framework */; };
+		99BCF946C70E1AB6A819FD41 /* Pods_Soundify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD81084B37D59920B433F041 /* Pods_Soundify.framework */; };
 		F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB9412875289800F76EB3 /* AppDelegate.swift */; };
 		F11BB94B2875289800F76EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94A2875289800F76EB3 /* Assets.xcassets */; };
 		F11BB94E2875289800F76EB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94C2875289800F76EB3 /* LaunchScreen.storyboard */; };
@@ -19,6 +19,10 @@
 		F17153972875EA8C00B6126B /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17153962875EA8C00B6126B /* Response.swift */; };
 		F17153992875EAFF00B6126B /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17153982875EAFF00B6126B /* HttpClient.swift */; };
 		F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */; };
+		F1AAF9202878768800CE7427 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF91F2878768800CE7427 /* AccountModel.swift */; };
+		F1AAF922287878D600CE7427 /* Authenticate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF921287878D600CE7427 /* Authenticate.swift */; };
+		F1AAF92528787ACE00CE7427 /* StorageSaveClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF92428787ACE00CE7427 /* StorageSaveClient.swift */; };
+		F1AAF92828787B2400CE7427 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF92728787B2400CE7427 /* StorageClient.swift */; };
 		F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1428760F69008EF0DF /* HttpError.swift */; };
 		F1BECC1728761096008EF0DF /* UnexpectedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1628761096008EF0DF /* UnexpectedError.swift */; };
 		F1BECC1928761350008EF0DF /* NoDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1828761350008EF0DF /* NoDataError.swift */; };
@@ -31,11 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		059710D6C499FF16E64958B8 /* Pods-Soundify.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.production.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.production.xcconfig"; sourceTree = "<group>"; };
-		1C05FA16048BD4285E3A27AC /* Pods_Soundify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55C8D17C39388A284463651B /* Pods-Soundify.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.develop.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.develop.xcconfig"; sourceTree = "<group>"; };
-		891296EB3577B73C12B4AEB1 /* Pods-Soundify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.release.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.release.xcconfig"; sourceTree = "<group>"; };
-		EDF82BB75F5EED9007FBA995 /* Pods-Soundify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.debug.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.debug.xcconfig"; sourceTree = "<group>"; };
+		057D77AE60E2490B2AFAF75D /* Pods-Soundify.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.develop.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.develop.xcconfig"; sourceTree = "<group>"; };
+		2AAA3D30FF8CDAFAD5AC9E33 /* Pods-Soundify.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.production.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.production.xcconfig"; sourceTree = "<group>"; };
+		CD81084B37D59920B433F041 /* Pods_Soundify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BB93E2875289800F76EB3 /* Soundify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BB9412875289800F76EB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F11BB94A2875289800F76EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +51,10 @@
 		F17153962875EA8C00B6126B /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		F17153982875EAFF00B6126B /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInCoordinator.swift; sourceTree = "<group>"; };
+		F1AAF91F2878768800CE7427 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
+		F1AAF921287878D600CE7427 /* Authenticate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authenticate.swift; sourceTree = "<group>"; };
+		F1AAF92428787ACE00CE7427 /* StorageSaveClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageSaveClient.swift; sourceTree = "<group>"; };
+		F1AAF92728787B2400CE7427 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
 		F1BECC1428760F69008EF0DF /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		F1BECC1628761096008EF0DF /* UnexpectedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedError.swift; sourceTree = "<group>"; };
 		F1BECC1828761350008EF0DF /* NoDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataError.swift; sourceTree = "<group>"; };
@@ -66,30 +72,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05F19F5C3BB59E776C1615B1 /* Pods_Soundify.framework in Frameworks */,
+				99BCF946C70E1AB6A819FD41 /* Pods_Soundify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		940B0641108999F54683A581 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD81084B37D59920B433F041 /* Pods_Soundify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A1DD0884923E3AD0A95DDFEC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EDF82BB75F5EED9007FBA995 /* Pods-Soundify.debug.xcconfig */,
-				891296EB3577B73C12B4AEB1 /* Pods-Soundify.release.xcconfig */,
-				55C8D17C39388A284463651B /* Pods-Soundify.develop.xcconfig */,
-				059710D6C499FF16E64958B8 /* Pods-Soundify.production.xcconfig */,
+				057D77AE60E2490B2AFAF75D /* Pods-Soundify.develop.xcconfig */,
+				2AAA3D30FF8CDAFAD5AC9E33 /* Pods-Soundify.production.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		ABE6492B9A38E082DBB15B6B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1C05FA16048BD4285E3A27AC /* Pods_Soundify.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F11BB9352875289800F76EB3 = {
@@ -99,7 +103,7 @@
 				F11BB9402875289800F76EB3 /* Soundify */,
 				F11BB93F2875289800F76EB3 /* Products */,
 				A1DD0884923E3AD0A95DDFEC /* Pods */,
-				ABE6492B9A38E082DBB15B6B /* Frameworks */,
+				940B0641108999F54683A581 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,7 +123,6 @@
 				F17153912875E5A700B6126B /* Infrastructure */,
 				F11BB96428752FA400F76EB3 /* Resources */,
 				F11BB95A28752A2F00F76EB3 /* Presentation */,
-				F11BB957287529A100F76EB3 /* Protocols */,
 				F11BB9552875298600F76EB3 /* Application */,
 				F11BB94F2875289800F76EB3 /* Info.plist */,
 			);
@@ -146,6 +149,7 @@
 		F11BB957287529A100F76EB3 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				F1AAF92328787AC400CE7427 /* Storage */,
 				F17153932875E6A200B6126B /* Http */,
 				F11BB958287529AF00F76EB3 /* Coordinator.swift */,
 			);
@@ -200,6 +204,8 @@
 		F17153912875E5A700B6126B /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				F1E671AB287A80AF00AB6783 /* Managers */,
+				F1AAF92628787B1600CE7427 /* Storage */,
 				F17153922875E5AF00B6126B /* Http */,
 			);
 			path = Infrastructure;
@@ -222,9 +228,34 @@
 			path = Http;
 			sourceTree = "<group>";
 		};
+		F1AAF91E2878766600CE7427 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F1AAF91F2878768800CE7427 /* AccountModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F1AAF92328787AC400CE7427 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F1AAF92428787ACE00CE7427 /* StorageSaveClient.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		F1AAF92628787B1600CE7427 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				F1AAF92728787B2400CE7427 /* StorageClient.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		F1BECC1228760F5C008EF0DF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				F1AAF91E2878766600CE7427 /* Models */,
 				F1BECC2128762D9C008EF0DF /* UseCases */,
 				F1BECC1328760F62008EF0DF /* Errors */,
 			);
@@ -261,6 +292,7 @@
 		F1BECC2428762F65008EF0DF /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				F11BB957287529A100F76EB3 /* Protocols */,
 				F1BECC2528762F6C008EF0DF /* UseCases */,
 			);
 			path = Data;
@@ -269,7 +301,7 @@
 		F1BECC2528762F6C008EF0DF /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				F1BECC2628762F85008EF0DF /* AuthenticationManager.swift */,
+				F1AAF921287878D600CE7427 /* Authenticate.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -283,6 +315,14 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		F1E671AB287A80AF00AB6783 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				F1BECC2628762F85008EF0DF /* AuthenticationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -290,11 +330,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F11BB9522875289800F76EB3 /* Build configuration list for PBXNativeTarget "Soundify" */;
 			buildPhases = (
-				95B5CF9D5054BDECDE7C880D /* [CP] Check Pods Manifest.lock */,
+				8C31BCE311DFB92547757C9E /* [CP] Check Pods Manifest.lock */,
 				F11BB93A2875289800F76EB3 /* Sources */,
 				F11BB93B2875289800F76EB3 /* Frameworks */,
 				F11BB93C2875289800F76EB3 /* Resources */,
-				2378CA1016E1436A4167FD2D /* [CP] Embed Pods Frameworks */,
+				8F3920481E9B7CC2985C6564 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -351,24 +391,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2378CA1016E1436A4167FD2D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Soundify/Pods-Soundify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Soundify/Pods-Soundify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Soundify/Pods-Soundify-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		95B5CF9D5054BDECDE7C880D /* [CP] Check Pods Manifest.lock */ = {
+		8C31BCE311DFB92547757C9E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -390,6 +413,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8F3920481E9B7CC2985C6564 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Soundify/Pods-Soundify-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Soundify/Pods-Soundify-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Soundify/Pods-Soundify-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -397,8 +437,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1AAF9202878768800CE7427 /* AccountModel.swift in Sources */,
 				F11BB96328752CAE00F76EB3 /* WelcomeView.swift in Sources */,
 				F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */,
+				F1AAF922287878D600CE7427 /* Authenticate.swift in Sources */,
 				F11BB96028752B5A00F76EB3 /* WelcomeViewController.swift in Sources */,
 				F17153992875EAFF00B6126B /* HttpClient.swift in Sources */,
 				F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */,
@@ -411,9 +453,11 @@
 				F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */,
 				F1BECC2728762F85008EF0DF /* AuthenticationManager.swift in Sources */,
 				F17153952875E80A00B6126B /* HttpPostClient.swift in Sources */,
+				F1AAF92528787ACE00CE7427 /* StorageSaveClient.swift in Sources */,
 				F1BECC2D28763FE2008EF0DF /* SignInViewController.swift in Sources */,
 				F1BECC1728761096008EF0DF /* UnexpectedError.swift in Sources */,
 				F11BB959287529AF00F76EB3 /* Coordinator.swift in Sources */,
+				F1AAF92828787B2400CE7427 /* StorageClient.swift in Sources */,
 				F17153972875EA8C00B6126B /* Response.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,6 +478,7 @@
 /* Begin XCBuildConfiguration section */
 		F1BECC1C28761947008EF0DF /* develop */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1BECC2A28763853008EF0DF /* Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -494,11 +539,12 @@
 		};
 		F1BECC1D28761947008EF0DF /* develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55C8D17C39388A284463651B /* Pods-Soundify.develop.xcconfig */;
+			baseConfigurationReference = 057D77AE60E2490B2AFAF75D /* Pods-Soundify.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://api.spotify.com/v1";
+				AUTH_URL = "https://accounts.spotify.com";
+				BASE_URL = "https://api.spotify.com/v1";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AF72TWGFLX;
@@ -516,7 +562,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raulmax319.Soundify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SIGN_IN_URL = "https://accounts.spotify.com/authorize";
+				REDIRECT_URL = "https://raulmax319.netlify.app";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -525,6 +571,7 @@
 		};
 		F1BECC1E28761968008EF0DF /* production */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1BECC2A28763853008EF0DF /* Env.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -579,11 +626,12 @@
 		};
 		F1BECC1F28761968008EF0DF /* production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 059710D6C499FF16E64958B8 /* Pods-Soundify.production.xcconfig */;
+			baseConfigurationReference = 2AAA3D30FF8CDAFAD5AC9E33 /* Pods-Soundify.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://api.spotify.com/v1";
+				AUTH_URL = "https://accounts.spotify.com";
+				BASE_URL = "https://api.spotify.com/v1";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = AF72TWGFLX;
@@ -601,7 +649,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.raulmax319.Soundify;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SIGN_IN_URL = "https://accounts.spotify.com/authorize";
+				REDIRECT_URL = "https://raulmax319.netlify.app";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

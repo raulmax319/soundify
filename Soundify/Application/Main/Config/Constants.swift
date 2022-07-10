@@ -16,12 +16,12 @@ struct Constants {
     return urls.object(forKey: "BASE_URL") as! String
   }()
   
-  static let signInURL: String = {
+  static let authURL: String = {
     guard let urls = Bundle.main.infoDictionary?["HTTP_URLS"] as? NSDictionary else {
-      fatalError("HTTP_URLS/SIGN_IN_URL Not found in Info plist")
+      fatalError("HTTP_URLS/AUTH_URL Not found in Info plist")
     }
     
-    return urls.object(forKey: "SIGN_IN_URL") as! String
+    return urls.object(forKey: "AUTH_URL") as! String
   }()
   
   static let clientID: String = {
@@ -40,22 +40,19 @@ struct Constants {
     return clientSecret
   }()
   
-  static let redirectURL: URL = {
-    guard let uri = Bundle.main.infoDictionary?["REDIRECT_URL"] as? String,
-          let url = URL(string: "https://\(uri)") else {
-      fatalError("REDIRECT_URL Not found in Info plist")
+  static let redirectURL: String = {
+    guard let url = Bundle.main.infoDictionary?["HTTP_URLS"] as? NSDictionary else {
+      fatalError("HTTP_URLS/REDIRECT_URL Not found in Info plist")
     }
     
-    return url
+    return url.object(forKey: "REDIRECT_URL") as! String
   }()
   
   static let scopes: [String] = {
-    guard let dict = Bundle.main.infoDictionary?["SCOPES"] as? NSDictionary else {
+    guard let scopes = Bundle.main.infoDictionary?["SCOPES"] as? [String] else {
       fatalError("SCOPES Not found in Info plist")
     }
     
-    let strArr = dict.object(forKey: "scopes") as! [String]
-    
-    return strArr
+    return scopes
   }()
 }

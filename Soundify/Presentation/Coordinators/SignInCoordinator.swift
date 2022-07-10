@@ -18,10 +18,11 @@ class SignInCoordinator: NSObject, Coordinator {
   
   func start() {
     let signInVc = SignInViewController()
-    signInVc.signInView.navigationDelegate = self
     
     guard let url = AuthenticationManager.shared.signInURL else { return }
+    signInVc.signInView.load(URLRequest(url: url))
+    
+    signInVc.navigationItem.largeTitleDisplayMode = .never
+    navigationController.pushViewController(signInVc, animated: true)
   }
 }
-
-extension SignInCoordinator: WKNavigationDelegate {}

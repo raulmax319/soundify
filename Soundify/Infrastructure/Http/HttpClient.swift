@@ -22,23 +22,28 @@ extension HttpClient: HttpPostClient {
   func post<T>(_ T: T.Type, to endPoint: String, body: [String : Any]?) async -> Response<T> where T : Decodable {
     
     let jsonBody = try? JSONSerialization.data(withJSONObject: body as Any)
-    let res = await client.post(to: endPoint, with: jsonBody)
     
-    guard let statusCode = res.statusCode else {
-      return .failure(UnexpectedError())
-    }
-    
-    guard let data = res.body else {
-      return .failure(NoDataError())
-    }
-    
-    switch statusCode {
-    case 200...299:
-      return .success(decode(T.self, data: data))
-    case 400...499:
-      return .failure(UnexpectedError())
-    default:
-      return .failure(URLError.badServerResponse as! Error)
+    do {
+      let res = try await client.post(to: endPoint, with: jsonBody)
+      
+      guard let statusCode = res?.statusCode else {
+        return .failure(UnexpectedError())
+      }
+      
+      guard let data = res?.body else {
+        return .failure(NoDataError())
+      }
+      
+      switch statusCode {
+      case 200...299:
+        return .success(decode(T.self, data: data))
+      case 400...499:
+        return .failure(UnexpectedError())
+      default:
+        return .failure(URLError.badServerResponse as! Error)
+      }
+    } catch {
+      return .failure(error)
     }
   }
 }
