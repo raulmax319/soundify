@@ -18,9 +18,6 @@ class SignInCoordinator: NSObject, Coordinator {
   
   func start() {
     let signInVc = SignInViewController()
-    signInVc.completionHandler = { [weak self] success in
-      self?.handleSignIn(success: success)
-    }
     
     signInVc.navigationItem.largeTitleDisplayMode = .never
     navigationController.pushViewController(signInVc, animated: true)
@@ -37,8 +34,6 @@ extension SignInCoordinator {
       return
     }
     
-    let mainAppTabBarVc = MainTabBarViewController()
-    mainAppTabBarVc.modalPresentationStyle = .fullScreen
-    navigationController.present(mainAppTabBarVc, animated: true)
+    TabBarCoordinator(with: navigationController).start()
   }
 }

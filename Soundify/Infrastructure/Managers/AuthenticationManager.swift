@@ -88,13 +88,13 @@ extension AuthenticationManager {
   }
 }
 
-// MARK: - GetToken
+// MARK: - Get Access Token
 extension AuthenticationManager: GetToken {
   func exchangeCodeForToken(code: String) async -> AccountModel {
     let body = [
       URLQueryItem(name: "grant_type", value: "authorization_code"),
       URLQueryItem(name: "code", value: code),
-      URLQueryItem(name: "redirect_uri", value: "https://raulmax319.netlify.app")
+      URLQueryItem(name: "redirect_uri", value: Constants.redirectURL)
     ]
     
     do {
@@ -107,7 +107,37 @@ extension AuthenticationManager: GetToken {
         tokenType: res?.tokenType
       )
     } catch {
-      print("🛑 Error: \(error.localizedDescription)")
+      return .init()
+    }
+  }
+}
+
+// MARK: - Refresh Access Token
+extension AuthenticationManager: RefreshAccessToken {
+  func refreshAccessToken() async -> AccountModel {
+//    guard shouldRefreshToken else {
+//      return .init()
+//    }
+    
+    guard let refreshToken = self.refreshToken else {
+      return .init()
+    }
+    
+    let body = [
+      URLQueryItem(name: "grant_type", value: "refresh_token"),
+      URLQueryItem(name: "refresh_token", value: refreshToken)
+    ]
+    
+    do {
+      let res = try await getToken(with: body)
+      return .init(
+        accessToken: res?.accessToken,
+        expiresIn: res?.expiresIn,
+        refreshToken: res?.refreshToken,
+        scope: res?.scope,
+        tokenType: res?.tokenType
+      )
+    } catch {
       return .init()
     }
   }

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		99BCF946C70E1AB6A819FD41 /* Pods_Soundify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD81084B37D59920B433F041 /* Pods_Soundify.framework */; };
+		F1197AC0287B633B00E614BB /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197ABF287B633B00E614BB /* HomeNavigationController.swift */; };
+		F1197AC3287B638200E614BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AC2287B638200E614BB /* HomeViewController.swift */; };
+		F1197AC5287B63D000E614BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AC4287B63D000E614BB /* HomeView.swift */; };
+		F1197AC7287B6CF100E614BB /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AC6287B6CF100E614BB /* TabBarCoordinator.swift */; };
+		F1197AC9287B717300E614BB /* RefreshAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AC8287B717300E614BB /* RefreshAccessToken.swift */; };
 		F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB9412875289800F76EB3 /* AppDelegate.swift */; };
 		F11BB94B2875289800F76EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94A2875289800F76EB3 /* Assets.xcassets */; };
 		F11BB94E2875289800F76EB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94C2875289800F76EB3 /* LaunchScreen.storyboard */; };
@@ -31,7 +36,7 @@
 		F1AAF92828787B2400CE7427 /* StorageClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1AAF92728787B2400CE7427 /* StorageClient.swift */; };
 		F1B183E3287B19630069CB6C /* GetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E2287B19630069CB6C /* GetToken.swift */; };
 		F1B183E5287B23ED0069CB6C /* StorageLoadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E4287B23ED0069CB6C /* StorageLoadClient.swift */; };
-		F1B183E8287B30990069CB6C /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E7287B30990069CB6C /* MainTabBarViewController.swift */; };
+		F1B183E8287B30990069CB6C /* TabBarBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E7287B30990069CB6C /* TabBarBaseViewController.swift */; };
 		F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1428760F69008EF0DF /* HttpError.swift */; };
 		F1BECC1728761096008EF0DF /* UnexpectedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1628761096008EF0DF /* UnexpectedError.swift */; };
 		F1BECC1928761350008EF0DF /* NoDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1828761350008EF0DF /* NoDataError.swift */; };
@@ -47,6 +52,11 @@
 		057D77AE60E2490B2AFAF75D /* Pods-Soundify.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.develop.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.develop.xcconfig"; sourceTree = "<group>"; };
 		2AAA3D30FF8CDAFAD5AC9E33 /* Pods-Soundify.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.production.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.production.xcconfig"; sourceTree = "<group>"; };
 		CD81084B37D59920B433F041 /* Pods_Soundify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1197ABF287B633B00E614BB /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		F1197AC2287B638200E614BB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F1197AC4287B63D000E614BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		F1197AC6287B6CF100E614BB /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		F1197AC8287B717300E614BB /* RefreshAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshAccessToken.swift; sourceTree = "<group>"; };
 		F11BB93E2875289800F76EB3 /* Soundify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BB9412875289800F76EB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F11BB94A2875289800F76EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +82,7 @@
 		F1AAF92728787B2400CE7427 /* StorageClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClient.swift; sourceTree = "<group>"; };
 		F1B183E2287B19630069CB6C /* GetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetToken.swift; sourceTree = "<group>"; };
 		F1B183E4287B23ED0069CB6C /* StorageLoadClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLoadClient.swift; sourceTree = "<group>"; };
-		F1B183E7287B30990069CB6C /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		F1B183E7287B30990069CB6C /* TabBarBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBaseViewController.swift; sourceTree = "<group>"; };
 		F1BECC1428760F69008EF0DF /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		F1BECC1628761096008EF0DF /* UnexpectedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedError.swift; sourceTree = "<group>"; };
 		F1BECC1828761350008EF0DF /* NoDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataError.swift; sourceTree = "<group>"; };
@@ -112,6 +122,23 @@
 				2AAA3D30FF8CDAFAD5AC9E33 /* Pods-Soundify.production.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F1197ABE287B632100E614BB /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				F1197ABF287B633B00E614BB /* HomeNavigationController.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		F1197AC1287B637800E614BB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F1197AC2287B638200E614BB /* HomeViewController.swift */,
+				F1197AC4287B63D000E614BB /* HomeView.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		F11BB9352875289800F76EB3 = {
@@ -188,6 +215,7 @@
 			children = (
 				F11BB95D28752A6D00F76EB3 /* WelcomeCoordinator.swift */,
 				F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */,
+				F1197AC6287B6CF100E614BB /* TabBarCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -195,7 +223,9 @@
 		F11BB95C28752A5100F76EB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				F1B183E6287B30830069CB6C /* MainTabBar */,
+				F1197AC1287B637800E614BB /* Home */,
+				F1197ABE287B632100E614BB /* Navigation */,
+				F1B183E6287B30830069CB6C /* TabBar */,
 				F1BECC2B28763F78008EF0DF /* SignIn */,
 				F11BB96128752C1800F76EB3 /* Welcome */,
 			);
@@ -284,12 +314,12 @@
 			path = Storage;
 			sourceTree = "<group>";
 		};
-		F1B183E6287B30830069CB6C /* MainTabBar */ = {
+		F1B183E6287B30830069CB6C /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				F1B183E7287B30990069CB6C /* MainTabBarViewController.swift */,
+				F1B183E7287B30990069CB6C /* TabBarBaseViewController.swift */,
 			);
-			path = MainTabBar;
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		F1BECC1228760F5C008EF0DF /* Domain */ = {
@@ -328,6 +358,7 @@
 			children = (
 				F1BECC2228762DCA008EF0DF /* Authentication.swift */,
 				F1B183E2287B19630069CB6C /* GetToken.swift */,
+				F1197AC8287B717300E614BB /* RefreshAccessToken.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -487,13 +518,16 @@
 				F1B183E5287B23ED0069CB6C /* StorageLoadClient.swift in Sources */,
 				F1AAF9202878768800CE7427 /* AccountModel.swift in Sources */,
 				F11BB96328752CAE00F76EB3 /* WelcomeView.swift in Sources */,
-				F1B183E8287B30990069CB6C /* MainTabBarViewController.swift in Sources */,
+				F1197AC5287B63D000E614BB /* HomeView.swift in Sources */,
+				F1B183E8287B30990069CB6C /* TabBarBaseViewController.swift in Sources */,
 				F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */,
 				F1AAF922287878D600CE7427 /* RemoteAuthentication.swift in Sources */,
 				F11BB96028752B5A00F76EB3 /* WelcomeViewController.swift in Sources */,
 				F17153992875EAFF00B6126B /* HttpClient.swift in Sources */,
 				F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */,
 				F1BECC2328762DCA008EF0DF /* Authentication.swift in Sources */,
+				F1197AC7287B6CF100E614BB /* TabBarCoordinator.swift in Sources */,
+				F1197AC0287B633B00E614BB /* HomeNavigationController.swift in Sources */,
 				F1B183E3287B19630069CB6C /* GetToken.swift in Sources */,
 				F1BECC2928763661008EF0DF /* Constants.swift in Sources */,
 				F1BECC2F28764013008EF0DF /* SignInView.swift in Sources */,
@@ -502,6 +536,8 @@
 				F11BB95E28752A6D00F76EB3 /* WelcomeCoordinator.swift in Sources */,
 				F1BECC1B28761569008EF0DF /* Environment.swift in Sources */,
 				F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */,
+				F1197AC9287B717300E614BB /* RefreshAccessToken.swift in Sources */,
+				F1197AC3287B638200E614BB /* HomeViewController.swift in Sources */,
 				F1BECC2728762F85008EF0DF /* AuthenticationManager.swift in Sources */,
 				F17153952875E80A00B6126B /* HttpPostClient.swift in Sources */,
 				F1AAF92528787ACE00CE7427 /* StorageSaveClient.swift in Sources */,

@@ -8,9 +8,7 @@
 import UIKit
 import WebKit
 
-class SignInViewController: UIViewController {
-  public var completionHandler: ((Bool) -> Void)?
-  
+class SignInViewController: UIViewController {  
   lazy var signInView: SignInView = {
     let view = SignInView()
     
@@ -36,26 +34,24 @@ class SignInViewController: UIViewController {
 
 extension SignInViewController: WKNavigationDelegate {
   func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-    Task.detached {
-      guard let url = await webView.url else { return }
+    Task {
+      guard let url = webView.url else { return }
       
       guard let code = URLComponents(
         string: url.absoluteString
       )?.queryItems?.first(where: { $0.name == "code" })?.value else {
         return
       }
-      await self.setHiddenWebView()
+      webView.isHidden = true
       
       let success = await RemoteAuthentication().auth(code: code)
       
-      await self.completionHandler?(success)
-      await self.navigationController?.popToRootViewController(animated: true)
+      if success {
+        TabBarCoordinator(with: self.navigationController!).start()
+        return
+      }
+      
+      self.navigationController?.popToRootViewController(animated: true)
     }
-  }
-}
-
-extension SignInViewController {
-  private func setHiddenWebView() {
-    signInView.isHidden = true
   }
 }

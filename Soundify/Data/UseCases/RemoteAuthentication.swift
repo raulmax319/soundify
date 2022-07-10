@@ -26,10 +26,9 @@ extension RemoteAuthentication: Authentication {
     }
     storage.save(for: "access_token", value: accessToken)
     
-    guard let refreshToken = model.refreshToken  else {
-      return false
+    if let refreshToken = model.refreshToken {
+      storage.save(for: "refresh_token", value: refreshToken)
     }
-    storage.save(for: "refresh_token", value: refreshToken)
     
     guard let expiresIn = model.expiresIn else {
       return false
@@ -39,5 +38,28 @@ extension RemoteAuthentication: Authentication {
     storage.save(for: "expiration_date", value: date)
 
     return true
+  }
+  
+  func refresh() async {
+    let model = await manager.refreshAccessToken()
+    
+    let storage: StorageClient = .shared
+    
+    guard let accessToken = model.accessToken else {
+      return
+    }
+    storage.save(for: "access_token", value: accessToken)
+    
+    if let refreshToken = model.refreshToken {
+      storage.save(for: "refresh_token", value: refreshToken)
+    }
+    
+    guard let expiresIn = model.expiresIn else {
+      return
+    }
+    
+    let date = Date().addingTimeInterval(TimeInterval(expiresIn))
+    storage.save(for: "expiration_date", value: date)
+    print(model)
   }
 }
