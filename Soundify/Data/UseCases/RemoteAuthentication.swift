@@ -60,6 +60,5 @@ extension RemoteAuthentication: Authentication {
     
     let date = Date().addingTimeInterval(TimeInterval(expiresIn))
     storage.save(for: "expiration_date", value: date)
-    print(model)
   }
 }

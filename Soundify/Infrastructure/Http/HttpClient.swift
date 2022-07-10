@@ -31,7 +31,7 @@ extension HttpClient: HttpPostClient {
       }
       
       guard let data = res.body else {
-        return .failure(NoDataError())
+        return .failure(EmptyData())
       }
       
       switch statusCode {
@@ -56,7 +56,7 @@ extension HttpClient {
       return result
   }
   
-  fileprivate static func setupConfig() -> BubbleTaskConfig {
+  fileprivate class func setupConfig() -> BubbleTaskConfig {
     return BubbleTaskConfig(baseUrl: Constants.baseURL, timeout: 30)
   }
 }

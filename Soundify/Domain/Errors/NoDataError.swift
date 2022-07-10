@@ -7,7 +7,7 @@
 
 import Foundation
 
-class NoDataError: HttpError {
+class EmptyData: HttpError {
   init() {
     super.init(with: "Failed to decode data.")
     self.name = "NoDataError"
