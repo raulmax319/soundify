@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		99BCF946C70E1AB6A819FD41 /* Pods_Soundify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD81084B37D59920B433F041 /* Pods_Soundify.framework */; };
+		389B48D81A0446BC88185F0B /* Pods_Soundify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB9CF24EE99D3584FC3D0A6E /* Pods_Soundify.framework */; };
 		F1197AC0287B633B00E614BB /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197ABF287B633B00E614BB /* HomeNavigationController.swift */; };
 		F1197AC3287B638200E614BB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AC2287B638200E614BB /* HomeViewController.swift */; };
 		F1197AC5287B63D000E614BB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AC4287B63D000E614BB /* HomeView.swift */; };
@@ -18,6 +18,8 @@
 		F1197ACF287B80E400E614BB /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197ACE287B80E400E614BB /* ImageModel.swift */; };
 		F1197AD1287B812A00E614BB /* GetCurrentUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD0287B812A00E614BB /* GetCurrentUserProfile.swift */; };
 		F1197AD3287BAA4200E614BB /* HttpGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD2287BAA4200E614BB /* HttpGetClient.swift */; };
+		F1197AD6287BAF1200E614BB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD5287BAF1200E614BB /* ProfileViewController.swift */; };
+		F1197AD8287BAF1900E614BB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD7287BAF1900E614BB /* ProfileView.swift */; };
 		F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB9412875289800F76EB3 /* AppDelegate.swift */; };
 		F11BB94B2875289800F76EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94A2875289800F76EB3 /* Assets.xcassets */; };
 		F11BB94E2875289800F76EB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94C2875289800F76EB3 /* LaunchScreen.storyboard */; };
@@ -54,9 +56,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		057D77AE60E2490B2AFAF75D /* Pods-Soundify.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.develop.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.develop.xcconfig"; sourceTree = "<group>"; };
-		2AAA3D30FF8CDAFAD5AC9E33 /* Pods-Soundify.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.production.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.production.xcconfig"; sourceTree = "<group>"; };
-		CD81084B37D59920B433F041 /* Pods_Soundify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A15CD32CFBE1A1B28144B42 /* Pods-Soundify.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.production.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.production.xcconfig"; sourceTree = "<group>"; };
+		AB9CF24EE99D3584FC3D0A6E /* Pods_Soundify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Soundify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BAF07C5167E527A30DDC51E4 /* Pods-Soundify.develop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Soundify.develop.xcconfig"; path = "Target Support Files/Pods-Soundify/Pods-Soundify.develop.xcconfig"; sourceTree = "<group>"; };
 		F1197ABF287B633B00E614BB /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		F1197AC2287B638200E614BB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F1197AC4287B63D000E614BB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,8 @@
 		F1197ACE287B80E400E614BB /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		F1197AD0287B812A00E614BB /* GetCurrentUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentUserProfile.swift; sourceTree = "<group>"; };
 		F1197AD2287BAA4200E614BB /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
+		F1197AD5287BAF1200E614BB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F1197AD7287BAF1900E614BB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		F11BB93E2875289800F76EB3 /* Soundify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BB9412875289800F76EB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F11BB94A2875289800F76EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,17 +114,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99BCF946C70E1AB6A819FD41 /* Pods_Soundify.framework in Frameworks */,
+				389B48D81A0446BC88185F0B /* Pods_Soundify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		940B0641108999F54683A581 /* Frameworks */ = {
+		81D06F0FEC99DB7B7A004DF6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CD81084B37D59920B433F041 /* Pods_Soundify.framework */,
+				AB9CF24EE99D3584FC3D0A6E /* Pods_Soundify.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,8 +132,8 @@
 		A1DD0884923E3AD0A95DDFEC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				057D77AE60E2490B2AFAF75D /* Pods-Soundify.develop.xcconfig */,
-				2AAA3D30FF8CDAFAD5AC9E33 /* Pods-Soundify.production.xcconfig */,
+				BAF07C5167E527A30DDC51E4 /* Pods-Soundify.develop.xcconfig */,
+				1A15CD32CFBE1A1B28144B42 /* Pods-Soundify.production.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -151,6 +155,15 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		F1197AD4287BAF0800E614BB /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				F1197AD5287BAF1200E614BB /* ProfileViewController.swift */,
+				F1197AD7287BAF1900E614BB /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		F11BB9352875289800F76EB3 = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +171,7 @@
 				F11BB9402875289800F76EB3 /* Soundify */,
 				F11BB93F2875289800F76EB3 /* Products */,
 				A1DD0884923E3AD0A95DDFEC /* Pods */,
-				940B0641108999F54683A581 /* Frameworks */,
+				81D06F0FEC99DB7B7A004DF6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -233,6 +246,7 @@
 		F11BB95C28752A5100F76EB3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F1197AD4287BAF0800E614BB /* Profile */,
 				F1197AC1287B637800E614BB /* Home */,
 				F1197ABE287B632100E614BB /* Navigation */,
 				F1B183E6287B30830069CB6C /* TabBar */,
@@ -419,11 +433,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F11BB9522875289800F76EB3 /* Build configuration list for PBXNativeTarget "Soundify" */;
 			buildPhases = (
-				8C31BCE311DFB92547757C9E /* [CP] Check Pods Manifest.lock */,
+				C6036F814A6688BABB4D1919 /* [CP] Check Pods Manifest.lock */,
 				F11BB93A2875289800F76EB3 /* Sources */,
 				F11BB93B2875289800F76EB3 /* Frameworks */,
 				F11BB93C2875289800F76EB3 /* Resources */,
-				8F3920481E9B7CC2985C6564 /* [CP] Embed Pods Frameworks */,
+				F2842C82D0C43952B4C3C555 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -484,7 +498,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8C31BCE311DFB92547757C9E /* [CP] Check Pods Manifest.lock */ = {
+		C6036F814A6688BABB4D1919 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -506,7 +520,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8F3920481E9B7CC2985C6564 /* [CP] Embed Pods Frameworks */ = {
+		F2842C82D0C43952B4C3C555 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -531,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1B183E5287B23ED0069CB6C /* StorageLoadClient.swift in Sources */,
+				F1197AD8287BAF1900E614BB /* ProfileView.swift in Sources */,
 				F1AAF9202878768800CE7427 /* AccountModel.swift in Sources */,
 				F11BB96328752CAE00F76EB3 /* WelcomeView.swift in Sources */,
 				F1197AC5287B63D000E614BB /* HomeView.swift in Sources */,
@@ -558,6 +573,7 @@
 				F1197AC9287B717300E614BB /* RefreshAccessToken.swift in Sources */,
 				F1197AC3287B638200E614BB /* HomeViewController.swift in Sources */,
 				F1BECC2728762F85008EF0DF /* AuthenticationManager.swift in Sources */,
+				F1197AD6287BAF1200E614BB /* ProfileViewController.swift in Sources */,
 				F17153952875E80A00B6126B /* HttpPostClient.swift in Sources */,
 				F1AAF92528787ACE00CE7427 /* StorageSaveClient.swift in Sources */,
 				F1BECC2D28763FE2008EF0DF /* SignInViewController.swift in Sources */,
@@ -647,7 +663,7 @@
 		};
 		F1BECC1D28761947008EF0DF /* develop */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 057D77AE60E2490B2AFAF75D /* Pods-Soundify.develop.xcconfig */;
+			baseConfigurationReference = BAF07C5167E527A30DDC51E4 /* Pods-Soundify.develop.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -734,7 +750,7 @@
 		};
 		F1BECC1F28761968008EF0DF /* production */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2AAA3D30FF8CDAFAD5AC9E33 /* Pods-Soundify.production.xcconfig */;
+			baseConfigurationReference = 1A15CD32CFBE1A1B28144B42 /* Pods-Soundify.production.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

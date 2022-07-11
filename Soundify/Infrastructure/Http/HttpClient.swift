@@ -12,9 +12,10 @@ final class HttpClient {
   private let client: BubbleTask
   private let config: BubbleTaskConfig
   
-  init(with client: BubbleTask) {
-    self.client = client
-    self.config = HttpClient.setupConfig()
+  init() {
+    let config = HttpClient.setupConfig()
+    self.client = BubbleTask(with: config)
+    self.config = config
   }
 }
 
@@ -33,7 +34,7 @@ extension HttpClient: HttpGetClient {
     let paramsData = components.query?.data(using: .utf8)
     
     do {
-      let res = try await client.post(to: endPoint, with: paramsData)
+      let res = try await client.get(to: endPoint, with: paramsData)
       
       guard let statusCode = res.statusCode else {
         return .failure(UnexpectedError())
