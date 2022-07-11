@@ -8,6 +8,6 @@
 import Foundation
 
 struct ImageModel: Codable {
-  let height, width: Int?
-  let url: String
+  public var height, width: Int?
+  public var url: String
 }

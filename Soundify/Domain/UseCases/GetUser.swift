@@ -8,5 +8,5 @@
 import Foundation
 
 protocol GetUser {
-  func getUser() async -> Response<UserModel>
+  func getUser() async -> UserModel?
 }

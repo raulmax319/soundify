@@ -17,6 +17,7 @@
 		F1197ACD287B807A00E614BB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197ACC287B807A00E614BB /* UserModel.swift */; };
 		F1197ACF287B80E400E614BB /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197ACE287B80E400E614BB /* ImageModel.swift */; };
 		F1197AD1287B812A00E614BB /* GetCurrentUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD0287B812A00E614BB /* GetCurrentUserProfile.swift */; };
+		F1197AD3287BAA4200E614BB /* HttpGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD2287BAA4200E614BB /* HttpGetClient.swift */; };
 		F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB9412875289800F76EB3 /* AppDelegate.swift */; };
 		F11BB94B2875289800F76EB3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94A2875289800F76EB3 /* Assets.xcassets */; };
 		F11BB94E2875289800F76EB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F11BB94C2875289800F76EB3 /* LaunchScreen.storyboard */; };
@@ -65,6 +66,7 @@
 		F1197ACC287B807A00E614BB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F1197ACE287B80E400E614BB /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
 		F1197AD0287B812A00E614BB /* GetCurrentUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentUserProfile.swift; sourceTree = "<group>"; };
+		F1197AD2287BAA4200E614BB /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
 		F11BB93E2875289800F76EB3 /* Soundify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F11BB9412875289800F76EB3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F11BB94A2875289800F76EB3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 			children = (
 				F17153942875E80A00B6126B /* HttpPostClient.swift */,
 				F17153962875EA8C00B6126B /* Response.swift */,
+				F1197AD2287BAA4200E614BB /* HttpGetClient.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				F17153992875EAFF00B6126B /* HttpClient.swift in Sources */,
 				F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */,
 				F1BECC2328762DCA008EF0DF /* Authentication.swift in Sources */,
+				F1197AD3287BAA4200E614BB /* HttpGetClient.swift in Sources */,
 				F1197AC7287B6CF100E614BB /* TabBarCoordinator.swift in Sources */,
 				F1197AC0287B633B00E614BB /* HomeNavigationController.swift in Sources */,
 				F1B183E3287B19630069CB6C /* GetToken.swift in Sources */,

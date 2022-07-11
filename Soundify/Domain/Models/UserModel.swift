@@ -8,9 +8,9 @@
 import Foundation
 
 struct UserModel: Codable {
-  let id, product, country, email: String
-  let displayName: String
-  let explicitContent: [String : Bool]
-  let external_urls: [String : String]
-  let images: [ImageModel]
+  public var id, product, country, email: String
+  public var displayName: String
+  public var explicitContent: [String : Bool]
+  public var external_urls: [String : String]
+  public var images: [ImageModel]
 }

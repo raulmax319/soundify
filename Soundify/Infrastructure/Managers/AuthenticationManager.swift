@@ -18,8 +18,6 @@ final class AuthenticationManager {
     self.httpClient = BubbleTask(with: config)
   }
   
-  private var refreshingToken = false
-  
   public var signInURL: URL? {
     return URL(
       string: "\(Constants.authURL)/authorize?response_type=code&client_id=\(Constants.clientID)&scope=\(Constants.scopes.joined(separator: "%20"))&redirect_uri=\(Constants.redirectURL)&show_dialog=TRUE"
@@ -30,8 +28,18 @@ final class AuthenticationManager {
     return accessToken != nil
   }
   
-  private var accessToken: String? {
+  public var accessToken: String? {
     return StorageClient.shared.loadString(for: "access_token")
+  }
+  
+  public var shouldRefreshToken: Bool {
+    guard let tokenExpirationDate = tokenExpirationDate else {
+      return false
+    }
+    
+    let currentTime = Date()
+    let minutes: TimeInterval = 300
+    return currentTime.addingTimeInterval(minutes) >= tokenExpirationDate
   }
   
   private var refreshToken: String? {
@@ -40,16 +48,6 @@ final class AuthenticationManager {
   
   private var tokenExpirationDate: Date? {
     return StorageClient.shared.load(Date.self, for: "expiration_date")
-  }
-  
-  private var shouldRefreshToken: Bool {
-    guard let tokenExpirationDate = tokenExpirationDate else {
-      return false
-    }
-    
-    let currentTime = Date()
-    let minutes: TimeInterval = 300
-    return currentTime.addingTimeInterval(minutes) >= tokenExpirationDate
   }
 }
 
