@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIFont {
-  open class func regular(ofSize size: CGFloat) -> UIFont? {
+  open class func regular(ofSize size: CGFloat) -> UIFont {
     guard let customFont = UIFont(name: "CircularStd-Book", size: size) else {
       fatalError("""
         Failed to load the "CircularStd-Book" font.
@@ -20,7 +20,7 @@ extension UIFont {
     return customFont
   }
   
-  open class func medium(ofSize size: CGFloat) -> UIFont? {
+  open class func medium(ofSize size: CGFloat) -> UIFont {
     guard let customFont = UIFont(name: "CircularStd-Medium", size: size) else {
       fatalError("""
         Failed to load the "CircularStd-Medium" font.
@@ -31,7 +31,7 @@ extension UIFont {
     return customFont
   }
   
-  open class func bold(ofSize size: CGFloat) -> UIFont? {
+  open class func bold(ofSize size: CGFloat) -> UIFont {
     guard let customFont = UIFont(name: "CircularStd-Bold", size: size) else {
       fatalError("""
         Failed to load the "CircularStd-Bold" font.
@@ -42,7 +42,7 @@ extension UIFont {
     return customFont
   }
   
-  open class func black(ofSize size: CGFloat) -> UIFont? {
+  open class func black(ofSize size: CGFloat) -> UIFont {
     guard let customFont = UIFont(name: "CircularStd-Black", size: size) else {
       fatalError("""
         Failed to load the "CircularStd-Black" font.
