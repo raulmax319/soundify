@@ -19,13 +19,7 @@ class ProfileViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let client = HttpClient()
-    
-    Task {
-      let res = await GetCurrentUserProfile(with: client).getUser()
-      
-      print("UserModel: \(res.debugDescription)")
-    }
+    profileView.fetchProfile()
   }
   
   override func loadView() {
