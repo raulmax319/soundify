@@ -14,7 +14,7 @@ class HomeNavigationController: UINavigationController {
     homeVc.title = "Browse"
     
     super.init(rootViewController: homeVc)
-    setupGearButton()
+    setupNavButton()
   }
   
   required init?(coder aDecoder: NSCoder) {
@@ -23,7 +23,7 @@ class HomeNavigationController: UINavigationController {
 }
 
 extension HomeNavigationController {
-  func setupGearButton() {
+  func setupNavButton() {
     tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), tag: 1)
     navigationBar.tintColor = .label
     navigationBar.prefersLargeTitles = true

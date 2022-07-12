@@ -13,8 +13,12 @@ class TabBarBaseViewController: UITabBarController {
     
     modalPresentationStyle = .fullScreen
     
-    let homeNav = HomeNavigationController()
+    let viewControllers = [
+      HomeNavigationController(),
+      SearchNavigationController(),
+      LibraryNavigationController()
+    ]
     
-    setViewControllers([homeNav], animated: true)
+    setViewControllers(viewControllers, animated: true)
   }
 }

@@ -1,5 +1,5 @@
 //
-//  UserVIewModel.swift
+//  UserViewModel.swift
 //  Soundify
 //
 //  Created by Raul Max on 11/07/22.
