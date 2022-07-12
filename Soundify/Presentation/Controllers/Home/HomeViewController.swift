@@ -36,8 +36,6 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController {
   @objc func didTapSettings() {
-    let vc = ProfileViewController()
-    vc.title = "Profile"
-    navigationController?.pushViewController(vc, animated: true)
+    TabBarCoordinator(with: navigationController!).navigateToProfile()
   }
 }

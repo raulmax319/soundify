@@ -18,4 +18,11 @@ class TabBarCoordinator: Coordinator {
     let vc = TabBarBaseViewController()
     navigationController.present(vc, animated: true)
   }
+  
+  func navigateToProfile() {
+    let vc = ProfileViewController()
+    vc.title = "Profile"
+    vc.navigationItem.largeTitleDisplayMode = .always
+    navigationController.pushViewController(vc, animated: true)
+  }
 }
