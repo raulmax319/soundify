@@ -9,10 +9,12 @@ import Foundation
 import BubbleTask
 
 final class HttpClient {
+  static let shared = HttpClient()
+  
   private let client: BubbleTask
   private let config: BubbleTaskConfig
   
-  init() {
+  private init() {
     let config = HttpClient.setupConfig()
     self.client = BubbleTask(with: config)
     self.config = config
