@@ -1,8 +1,16 @@
 PODS:
   - BubbleTask/Debug (0.2.0)
+  - SDWebImage (5.13.0):
+    - SDWebImage/Core (= 5.13.0)
+  - SDWebImage/Core (5.13.0)
 
 DEPENDENCIES:
   - "BubbleTask/Debug (from `git@github.com:raulmax319/bubbletask.git`, tag `0.2.1`)"
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - SDWebImage
 
 EXTERNAL SOURCES:
   BubbleTask:
@@ -16,7 +24,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   BubbleTask: d62cd35f1d0de21714accee50807685da4e9a757
+  SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
 
-PODFILE CHECKSUM: b4e694184c9b7a0242f8c9e6666eadd78a764223
+PODFILE CHECKSUM: 1a2e44efbf5e5e0d6da7728bf4b43d57dd740b50
 
 COCOAPODS: 1.11.3

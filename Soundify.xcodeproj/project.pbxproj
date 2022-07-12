@@ -16,7 +16,7 @@
 		F1197ACB287B802900E614BB /* GetUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197ACA287B802900E614BB /* GetUser.swift */; };
 		F1197ACD287B807A00E614BB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197ACC287B807A00E614BB /* UserModel.swift */; };
 		F1197ACF287B80E400E614BB /* ImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197ACE287B80E400E614BB /* ImageModel.swift */; };
-		F1197AD1287B812A00E614BB /* GetCurrentUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD0287B812A00E614BB /* GetCurrentUserProfile.swift */; };
+		F1197AD1287B812A00E614BB /* UserLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD0287B812A00E614BB /* UserLoader.swift */; };
 		F1197AD3287BAA4200E614BB /* HttpGetClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD2287BAA4200E614BB /* HttpGetClient.swift */; };
 		F1197AD6287BAF1200E614BB /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD5287BAF1200E614BB /* ProfileViewController.swift */; };
 		F1197AD8287BAF1900E614BB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1197AD7287BAF1900E614BB /* ProfileView.swift */; };
@@ -44,6 +44,7 @@
 		F1B183E3287B19630069CB6C /* GetToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E2287B19630069CB6C /* GetToken.swift */; };
 		F1B183E5287B23ED0069CB6C /* StorageLoadClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E4287B23ED0069CB6C /* StorageLoadClient.swift */; };
 		F1B183E8287B30990069CB6C /* TabBarBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B183E7287B30990069CB6C /* TabBarBaseViewController.swift */; };
+		F1BB02FF287D0713004CB3E6 /* UserVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BB02FE287D0713004CB3E6 /* UserVIewModel.swift */; };
 		F1BECC1528760F69008EF0DF /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1428760F69008EF0DF /* HttpError.swift */; };
 		F1BECC1728761096008EF0DF /* UnexpectedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1628761096008EF0DF /* UnexpectedError.swift */; };
 		F1BECC1928761350008EF0DF /* NoDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC1828761350008EF0DF /* NoDataError.swift */; };
@@ -53,6 +54,7 @@
 		F1BECC2928763661008EF0DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC2828763661008EF0DF /* Constants.swift */; };
 		F1BECC2D28763FE2008EF0DF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC2C28763FE2008EF0DF /* SignInViewController.swift */; };
 		F1BECC2F28764013008EF0DF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC2E28764013008EF0DF /* SignInView.swift */; };
+		F1F339DA287D9F0D003A537E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F339D9287D9F0D003A537E /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +69,7 @@
 		F1197ACA287B802900E614BB /* GetUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUser.swift; sourceTree = "<group>"; };
 		F1197ACC287B807A00E614BB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		F1197ACE287B80E400E614BB /* ImageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModel.swift; sourceTree = "<group>"; };
-		F1197AD0287B812A00E614BB /* GetCurrentUserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCurrentUserProfile.swift; sourceTree = "<group>"; };
+		F1197AD0287B812A00E614BB /* UserLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLoader.swift; sourceTree = "<group>"; };
 		F1197AD2287BAA4200E614BB /* HttpGetClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpGetClient.swift; sourceTree = "<group>"; };
 		F1197AD5287BAF1200E614BB /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F1197AD7287BAF1900E614BB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		F1B183E2287B19630069CB6C /* GetToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetToken.swift; sourceTree = "<group>"; };
 		F1B183E4287B23ED0069CB6C /* StorageLoadClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLoadClient.swift; sourceTree = "<group>"; };
 		F1B183E7287B30990069CB6C /* TabBarBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBaseViewController.swift; sourceTree = "<group>"; };
+		F1BB02FE287D0713004CB3E6 /* UserVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserVIewModel.swift; sourceTree = "<group>"; };
 		F1BECC1428760F69008EF0DF /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		F1BECC1628761096008EF0DF /* UnexpectedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnexpectedError.swift; sourceTree = "<group>"; };
 		F1BECC1828761350008EF0DF /* NoDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataError.swift; sourceTree = "<group>"; };
@@ -107,6 +110,7 @@
 		F1BECC2A28763853008EF0DF /* Env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Env.xcconfig; sourceTree = "<group>"; };
 		F1BECC2C28763FE2008EF0DF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F1BECC2E28764013008EF0DF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F1F339D9287D9F0D003A537E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,6 +231,7 @@
 		F11BB95A28752A2F00F76EB3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F1BB02FD287D06FF004CB3E6 /* ViewModels */,
 				F11BB95C28752A5100F76EB3 /* Controllers */,
 				F11BB95B28752A4B00F76EB3 /* Coordinators */,
 			);
@@ -349,6 +354,14 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		F1BB02FD287D06FF004CB3E6 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				F1BB02FE287D0713004CB3E6 /* UserVIewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		F1BECC1228760F5C008EF0DF /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +400,7 @@
 				F1B183E2287B19630069CB6C /* GetToken.swift */,
 				F1197AC8287B717300E614BB /* RefreshAccessToken.swift */,
 				F1197ACA287B802900E614BB /* GetUser.swift */,
+				F1F339D9287D9F0D003A537E /* ViewModel.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -404,7 +418,7 @@
 			isa = PBXGroup;
 			children = (
 				F1AAF921287878D600CE7427 /* RemoteAuthentication.swift */,
-				F1197AD0287B812A00E614BB /* GetCurrentUserProfile.swift */,
+				F1197AD0287B812A00E614BB /* UserLoader.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -563,12 +577,13 @@
 				F1197AC0287B633B00E614BB /* HomeNavigationController.swift in Sources */,
 				F1B183E3287B19630069CB6C /* GetToken.swift in Sources */,
 				F1BECC2928763661008EF0DF /* Constants.swift in Sources */,
-				F1197AD1287B812A00E614BB /* GetCurrentUserProfile.swift in Sources */,
+				F1197AD1287B812A00E614BB /* UserLoader.swift in Sources */,
 				F1BECC2F28764013008EF0DF /* SignInView.swift in Sources */,
 				F13C83D4287B01AE006D85C7 /* UIFontExtension.swift in Sources */,
 				F1BECC1928761350008EF0DF /* NoDataError.swift in Sources */,
 				F11BB95E28752A6D00F76EB3 /* WelcomeCoordinator.swift in Sources */,
 				F1BECC1B28761569008EF0DF /* Environment.swift in Sources */,
+				F1BB02FF287D0713004CB3E6 /* UserVIewModel.swift in Sources */,
 				F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */,
 				F1197AC9287B717300E614BB /* RefreshAccessToken.swift in Sources */,
 				F1197AC3287B638200E614BB /* HomeViewController.swift in Sources */,
@@ -577,6 +592,7 @@
 				F17153952875E80A00B6126B /* HttpPostClient.swift in Sources */,
 				F1AAF92528787ACE00CE7427 /* StorageSaveClient.swift in Sources */,
 				F1BECC2D28763FE2008EF0DF /* SignInViewController.swift in Sources */,
+				F1F339DA287D9F0D003A537E /* ViewModel.swift in Sources */,
 				F1BECC1728761096008EF0DF /* UnexpectedError.swift in Sources */,
 				F13C83C9287AFE9F006D85C7 /* UIViewExtension.swift in Sources */,
 				F1197ACB287B802900E614BB /* GetUser.swift in Sources */,
