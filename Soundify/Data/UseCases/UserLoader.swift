@@ -7,15 +7,7 @@
 
 import Foundation
 
-class UserLoader {
-  private let client: HttpClient
-  
-  init(with client: HttpClient = .shared) {
-    self.client = client
-  }
-}
-
-extension UserLoader {
+class UserLoader: Loader {
   public func load() async throws -> UserModel {
     let response = await client.get(UserModel.self, to: "/me", params: nil)
     

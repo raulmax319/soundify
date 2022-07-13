@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window.makeKeyAndVisible()
     self.window = window
     
+    let viewMOdel = NewReleasesViewModel()
+    Task {
+      await viewMOdel.load()
+    }
+    
     return true
   }
 }
