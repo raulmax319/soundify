@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum AlbumType: String, Codable {
-  case album
-  case single
-}
-
 struct AlbumModel: Codable {
   let albumType: AlbumType
   let availableMarkets: [String]?
@@ -23,6 +18,12 @@ struct AlbumModel: Codable {
   let type: AlbumType
   let label, uri: String?
   let artists: [ArtistModel]
+}
+
+enum AlbumType: String, Codable {
+  case album, ALBUM
+  case single, SINGLE
+  case compilation, COMPILATION
 }
 
 extension AlbumModel {
