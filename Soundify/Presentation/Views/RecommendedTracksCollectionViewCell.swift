@@ -9,4 +9,6 @@ import UIKit
 
 class RecommendedTracksCollectionViewCell: UICollectionViewCell {
   static let kReuseIdentifier = "RecommendedTracksCollectionViewCell"
+  
+  public func configure(with viewData: RecommendedTracksViewData) {}
 }
