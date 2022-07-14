@@ -16,8 +16,8 @@ class ProfileViewController: UIViewController {
     return view
   }()
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     
     profileView.fetchProfile()
   }
