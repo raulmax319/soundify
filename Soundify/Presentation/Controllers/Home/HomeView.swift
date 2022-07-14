@@ -8,9 +8,9 @@
 import UIKit
 
 enum BrowseSectionType {
-  case newReleases(viewModel: [NewReleasesViewModel])
-//  case featuredPlaylists(viewModel: [FeaturedPlaylistsViewModel])
-//  case recommendedTracks(viewModel: [RecommendedTracksViewModel])
+  case newReleases(viewModel: [NewReleasesViewData])
+  case featuredPlaylists(viewModel: [FeaturedPlaylistsViewData])
+  case recommendedTracks(viewModel: [RecommendedTracksViewData])
 }
 
 class HomeView: UIView {
@@ -24,6 +24,7 @@ class HomeView: UIView {
     return collectionView
   }()
   
+  /// Sections of the Home View
   private var sections = [BrowseSectionType]()
   
   override init(frame: CGRect) {
@@ -37,6 +38,7 @@ class HomeView: UIView {
   }
 }
 
+// MARK: - Private
 extension HomeView {
   private func setupCollectionView() {
     addSubview(collectionView)
@@ -62,17 +64,124 @@ extension HomeView {
       collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
     ])
   }
+  
+  @MainActor private func configureModels(
+    album: [AlbumModel],
+    playlists: [PlaylistItemModel],
+    tracks: [AudioTrackModel]
+  ) {
+    sections.append(.newReleases(viewModel: album.compactMap {
+      return NewReleasesViewData(
+        name: $0.name,
+        artworkUrl: URL(string: $0.images.first?.url ?? ""),
+        numberOfTracks: $0.totalTracks,
+        artistName: $0.artists.first?.name ?? ""
+      )
+    }))
+    sections.append(.featuredPlaylists(viewModel: playlists.compactMap {
+      return FeaturedPlaylistsViewData(
+        name: $0.name,
+        artworkUrl: URL(string: $0.images.first?.url ?? ""),
+        creatorName: $0.owner.displayName
+      )
+    }))
+    sections.append(.recommendedTracks(viewModel: tracks.compactMap {
+      return RecommendedTracksViewData(
+        name: $0.name,
+        artistName: $0.artists.first?.name ?? "",
+        artworkUrl: URL(string: $0.album?.images.first?.url ?? "")
+      )
+    }))
+    collectionView.reloadData()
+  }
+}
+
+// MARK: - Public
+extension HomeView {
+  public func fetchData() {
+    var newReleases: NewReleasesModel?
+    var featuredPlaylists: FeaturedPlaylistsModel?
+    var recommendations: RecommendationsModel?
+    
+    let newReleasesViewModel = NewReleasesViewModel()
+    let featuredPlaylistsViewModel = FeaturedPlaylistsViewModel()
+    let recommendationsViewModel = RecommendationsViewModel()
+    
+    // TODO: - Run tasks in parallel
+    Task {
+      await newReleasesViewModel.load()
+      await featuredPlaylistsViewModel.load()
+      await recommendationsViewModel.load()
+      
+      if let newReleasesModel = await newReleasesViewModel.model,
+         let featuredPlaylistsModel = await featuredPlaylistsViewModel.model,
+         let recommendationsModel = await recommendationsViewModel.model {
+        newReleases = newReleasesModel
+        featuredPlaylists = featuredPlaylistsModel
+        recommendations = recommendationsModel
+      }
+      
+      guard let albums = newReleases?.albums.items,
+            let playlists = featuredPlaylists?.playlists.items,
+            let tracks = recommendations?.tracks
+      else {
+        return
+      }
+      
+      await MainActor.run {
+        self.configureModels(album: albums, playlists: playlists, tracks: tracks)
+      }
+    } // Task
+  }
 }
 
 extension HomeView: UICollectionViewDelegate {}
 
+// MARK: - CollectionView Datasource
 extension HomeView: UICollectionViewDataSource {
+  func numberOfSections(in collectionView: UICollectionView) -> Int {
+    return sections.count
+  }
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 1
+    switch sections[section] {
+    case .newReleases(viewModel: let vm):
+      return vm.count
+    case .featuredPlaylists(viewModel: let vm):
+      return vm.count
+    case .recommendedTracks(viewModel: let vm):
+      return vm.count
+    }
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    return collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistsCollectionViewCell.kReuseIdentifier, for: indexPath)
+    switch sections[indexPath.section] {
+    /// New Releases View Data Supplier
+    case .newReleases(viewModel: let viewModel):
+      guard let cell = collectionView.dequeueReusableCell(
+        withReuseIdentifier: NewReleasesCollectionViewCell.kReuseIdentifier,
+        for: indexPath
+      ) as? NewReleasesCollectionViewCell else { return UICollectionViewCell() }
+      cell.configure(with: viewModel[indexPath.row])
+      return cell
+    
+    /// Featured Playlists View Data Supplier
+    case .featuredPlaylists(viewModel: let viewModel):
+      guard let cell = collectionView.dequeueReusableCell(
+        withReuseIdentifier: FeaturedPlaylistsCollectionViewCell.kReuseIdentifier,
+        for: indexPath
+      ) as? FeaturedPlaylistsCollectionViewCell else { return UICollectionViewCell() }
+      cell.configure(with: viewModel[indexPath.row])
+      return cell
+    
+      /// Recommended Tracks View Data Supplier
+    case .recommendedTracks(viewModel: let viewModel):
+      guard let cell = collectionView.dequeueReusableCell(
+        withReuseIdentifier: RecommendedTracksCollectionViewCell.kReuseIdentifier,
+        for: indexPath
+      ) as? RecommendedTracksCollectionViewCell else { return UICollectionViewCell() }
+      cell.configure(with: viewModel[indexPath.row])
+      return cell
+    }
   }
 }
 

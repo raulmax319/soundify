@@ -83,6 +83,13 @@
 		F1BECC2928763661008EF0DF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC2828763661008EF0DF /* Constants.swift */; };
 		F1BECC2D28763FE2008EF0DF /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC2C28763FE2008EF0DF /* SignInViewController.swift */; };
 		F1BECC2F28764013008EF0DF /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BECC2E28764013008EF0DF /* SignInView.swift */; };
+		F1CDD1E3287F753500654A7B /* RecommendationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDD1E2287F753500654A7B /* RecommendationsModel.swift */; };
+		F1CDD1E5287F8E5D00654A7B /* FeaturedPlaylistsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDD1E4287F8E5D00654A7B /* FeaturedPlaylistsViewModel.swift */; };
+		F1CDD1E7287F8EAC00654A7B /* FeaturedPlaylistsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDD1E6287F8EAC00654A7B /* FeaturedPlaylistsLoader.swift */; };
+		F1CDD1E9287F8F4F00654A7B /* RecommendationsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDD1E8287F8F4F00654A7B /* RecommendationsLoader.swift */; };
+		F1CDD1EB287F8F6900654A7B /* RecommendationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDD1EA287F8F6900654A7B /* RecommendationsViewModel.swift */; };
+		F1CDD1ED287F97D800654A7B /* FeaturedPlaylistsViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDD1EC287F97D800654A7B /* FeaturedPlaylistsViewData.swift */; };
+		F1CDD1EF287F9A1500654A7B /* RecommendedTracksViewData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CDD1EE287F9A1500654A7B /* RecommendedTracksViewData.swift */; };
 		F1F339DA287D9F0D003A537E /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F339D9287D9F0D003A537E /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +175,13 @@
 		F1BECC2A28763853008EF0DF /* Env.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Env.xcconfig; sourceTree = "<group>"; };
 		F1BECC2C28763FE2008EF0DF /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		F1BECC2E28764013008EF0DF /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		F1CDD1E2287F753500654A7B /* RecommendationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsModel.swift; sourceTree = "<group>"; };
+		F1CDD1E4287F8E5D00654A7B /* FeaturedPlaylistsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsViewModel.swift; sourceTree = "<group>"; };
+		F1CDD1E6287F8EAC00654A7B /* FeaturedPlaylistsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsLoader.swift; sourceTree = "<group>"; };
+		F1CDD1E8287F8F4F00654A7B /* RecommendationsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsLoader.swift; sourceTree = "<group>"; };
+		F1CDD1EA287F8F6900654A7B /* RecommendationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsViewModel.swift; sourceTree = "<group>"; };
+		F1CDD1EC287F97D800654A7B /* FeaturedPlaylistsViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsViewData.swift; sourceTree = "<group>"; };
+		F1CDD1EE287F9A1500654A7B /* RecommendedTracksViewData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedTracksViewData.swift; sourceTree = "<group>"; };
 		F1F339D9287D9F0D003A537E /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -427,6 +441,8 @@
 			isa = PBXGroup;
 			children = (
 				F16A45D8287E5A5A002B6CE6 /* NewReleasesViewData.swift */,
+				F1CDD1EC287F97D800654A7B /* FeaturedPlaylistsViewData.swift */,
+				F1CDD1EE287F9A1500654A7B /* RecommendedTracksViewData.swift */,
 			);
 			path = ViewData;
 			sourceTree = "<group>";
@@ -472,6 +488,7 @@
 				F16A45C2287E3979002B6CE6 /* FeaturedPlaylistsModel.swift */,
 				F16A45C4287E3A05002B6CE6 /* TracksModel.swift */,
 				F16A45C6287E3A2B002B6CE6 /* AudioTrackModel.swift */,
+				F1CDD1E2287F753500654A7B /* RecommendationsModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -506,6 +523,8 @@
 			children = (
 				F1BB02FE287D0713004CB3E6 /* UserViewModel.swift */,
 				F16A45D3287E5795002B6CE6 /* NewReleasesViewModel.swift */,
+				F1CDD1E4287F8E5D00654A7B /* FeaturedPlaylistsViewModel.swift */,
+				F1CDD1EA287F8F6900654A7B /* RecommendationsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -570,6 +589,8 @@
 				F1197AD0287B812A00E614BB /* UserLoader.swift */,
 				F16A45C8287E3C10002B6CE6 /* AlbumDetailsLoader.swift */,
 				F16A45D5287E5868002B6CE6 /* NewReleasesLoader.swift */,
+				F1CDD1E6287F8EAC00654A7B /* FeaturedPlaylistsLoader.swift */,
+				F1CDD1E8287F8F4F00654A7B /* RecommendationsLoader.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -709,6 +730,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1CDD1E5287F8E5D00654A7B /* FeaturedPlaylistsViewModel.swift in Sources */,
 				F1B183E5287B23ED0069CB6C /* StorageLoadClient.swift in Sources */,
 				F1197AD8287BAF1900E614BB /* ProfileView.swift in Sources */,
 				F1AAF9202878768800CE7427 /* AccountModel.swift in Sources */,
@@ -727,6 +749,7 @@
 				F1197ACF287B80E400E614BB /* ImageModel.swift in Sources */,
 				F1AAF922287878D600CE7427 /* RemoteAuthentication.swift in Sources */,
 				F11BB96028752B5A00F76EB3 /* WelcomeViewController.swift in Sources */,
+				F1CDD1EF287F9A1500654A7B /* RecommendedTracksViewData.swift in Sources */,
 				F1197ACD287B807A00E614BB /* UserModel.swift in Sources */,
 				F17153992875EAFF00B6126B /* HttpClient.swift in Sources */,
 				F1AAF91D28784E6C00CE7427 /* SignInCoordinator.swift in Sources */,
@@ -737,6 +760,7 @@
 				F16A45A1287E2590002B6CE6 /* LibraryViewController.swift in Sources */,
 				F1197AC7287B6CF100E614BB /* TabBarCoordinator.swift in Sources */,
 				F1197AC0287B633B00E614BB /* HomeNavigationController.swift in Sources */,
+				F1CDD1E7287F8EAC00654A7B /* FeaturedPlaylistsLoader.swift in Sources */,
 				F16A45BB287E3048002B6CE6 /* AlbumModel.swift in Sources */,
 				F1B183E3287B19630069CB6C /* GetToken.swift in Sources */,
 				F1BECC2928763661008EF0DF /* Constants.swift in Sources */,
@@ -752,6 +776,7 @@
 				F1BB02FF287D0713004CB3E6 /* UserViewModel.swift in Sources */,
 				F16A4599287E24B8002B6CE6 /* SearchNavigationController.swift in Sources */,
 				F11BB9422875289800F76EB3 /* AppDelegate.swift in Sources */,
+				F1CDD1E3287F753500654A7B /* RecommendationsModel.swift in Sources */,
 				F1197AC9287B717300E614BB /* RefreshAccessToken.swift in Sources */,
 				F1197AC3287B638200E614BB /* HomeViewController.swift in Sources */,
 				F1BECC2728762F85008EF0DF /* AuthenticationManager.swift in Sources */,
@@ -762,6 +787,7 @@
 				F17153952875E80A00B6126B /* HttpPostClient.swift in Sources */,
 				F16A45D9287E5A5A002B6CE6 /* NewReleasesViewData.swift in Sources */,
 				F16A45AA287E2D8A002B6CE6 /* AlbumView.swift in Sources */,
+				F1CDD1ED287F97D800654A7B /* FeaturedPlaylistsViewData.swift in Sources */,
 				F16A45AD287E2DDD002B6CE6 /* PlayerViewController.swift in Sources */,
 				F1AAF92528787ACE00CE7427 /* StorageSaveClient.swift in Sources */,
 				F1BECC2D28763FE2008EF0DF /* SignInViewController.swift in Sources */,
@@ -775,7 +801,9 @@
 				F16A45B4287E2E62002B6CE6 /* PlaylistView.swift in Sources */,
 				F11BB959287529AF00F76EB3 /* Coordinator.swift in Sources */,
 				F16A45A5287E25EE002B6CE6 /* LibraryNavigationController.swift in Sources */,
+				F1CDD1E9287F8F4F00654A7B /* RecommendationsLoader.swift in Sources */,
 				F16A45B9287E2EBC002B6CE6 /* SearchResultViewController.swift in Sources */,
+				F1CDD1EB287F8F6900654A7B /* RecommendationsViewModel.swift in Sources */,
 				F1AAF92828787B2400CE7427 /* StorageClient.swift in Sources */,
 				F16A45CB287E41C9002B6CE6 /* Loader.swift in Sources */,
 				F17153972875EA8C00B6126B /* Response.swift in Sources */,
