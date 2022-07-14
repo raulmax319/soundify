@@ -32,6 +32,12 @@ class HomeViewController: UIViewController {
     
     view = homeView
   }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    homeView.fetchData()
+  }
 }
 
 extension HomeViewController {
