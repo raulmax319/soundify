@@ -9,4 +9,6 @@ import UIKit
 
 class FeaturedPlaylistsCollectionViewCell: UICollectionViewCell {
   static let kReuseIdentifier = "FeaturedPlaylistsCollectionViewCell"
+  
+  public func configure(with viewData: FeaturedPlaylistsViewData) {}
 }
