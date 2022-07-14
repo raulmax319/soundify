@@ -9,4 +9,8 @@ import UIKit
 
 class NewReleasesCollectionViewCell: UICollectionViewCell {
   static let kReuseIdentifier = "NewReleasesCollectionViewCell"
+  
+  public func configure(with viewData: NewReleasesViewData) {
+    
+  }
 }

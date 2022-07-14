@@ -9,7 +9,7 @@ import Foundation
 
 actor NewReleasesViewModel: ViewModel {
   private(set) var loader: NewReleasesLoader
-  private(set) var data: NewReleasesModel?
+  private(set) var model: NewReleasesModel?
   
   init() {
     self.loader = NewReleasesLoader()
@@ -18,10 +18,11 @@ actor NewReleasesViewModel: ViewModel {
   func load() async {
     do {
       let result = try await loader.load()
-      print(result)
-      data = result
+      model = result
     } catch {
       // do nothing for now
+      print("New Releases: ")
+      print(error.localizedDescription)
     }
   }
 }
