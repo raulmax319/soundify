@@ -19,7 +19,7 @@ class FeaturedPlaylistsCollectionLayoutSection: NSCollectionLayoutSection {
   
   convenience init() {
     let item = NSCollectionLayoutItem(layoutSize: Self.itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 5, bottom: 2, trailing: 5)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
     
     let group = NSCollectionLayoutGroup.horizontal(
       layoutSize: Self.groupSize,
@@ -33,5 +33,4 @@ class FeaturedPlaylistsCollectionLayoutSection: NSCollectionLayoutSection {
 }
 
 // MARK: - Private
-extension FeaturedPlaylistsCollectionLayoutSection {
-}
+extension FeaturedPlaylistsCollectionLayoutSection {}

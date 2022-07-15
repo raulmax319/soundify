@@ -13,38 +13,24 @@ class NewReleasesCollectionLayoutSection: NSCollectionLayoutSection {
     return NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
   }
   
-  private class var verticalGroupLayoutSize: NSCollectionLayoutSize {
-    return NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
-  }
-  
-  private class var horizontalGroupLayoutSize: NSCollectionLayoutSize {
-    return NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalWidth(1.0))
-  }
-  
-  private class var item: NSCollectionLayoutItem {
-    let item = NSCollectionLayoutItem(layoutSize: Self.itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-    return item
+  private class var groupSize: NSCollectionLayoutSize {
+    return NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalWidth(1/1.5))
   }
   
   convenience init() {
-    let verticalGroup = NSCollectionLayoutGroup.vertical(
-      layoutSize: Self.verticalGroupLayoutSize,
-      subitem: Self.item,
-      count: 3
+    let item = NSCollectionLayoutItem(layoutSize: Self.itemSize)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
+    
+    let group = NSCollectionLayoutGroup.horizontal(
+      layoutSize: Self.groupSize,
+      subitem: item,
+      count: 2
     )
     
-    let horizontalGroup = NSCollectionLayoutGroup.horizontal(
-      layoutSize: Self.horizontalGroupLayoutSize,
-      subitem: verticalGroup,
-      count: 1
-    )
-    
-    self.init(group: horizontalGroup)
+    self.init(group: group)
     orthogonalScrollingBehavior = .continuous
   }
 }
 
 // MARK: - Private
-extension NewReleasesCollectionLayoutSection {
-}
+extension NewReleasesCollectionLayoutSection {}

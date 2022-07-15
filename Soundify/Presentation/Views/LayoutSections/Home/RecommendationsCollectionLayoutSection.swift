@@ -14,17 +14,17 @@ class RecommendationsCollectionLayoutSection: NSCollectionLayoutSection {
   }
   
   private class var groupSize: NSCollectionLayoutSize {
-    return NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(80))
+    return NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalWidth(1/1.5))
   }
   
   convenience init() {
     let item = NSCollectionLayoutItem(layoutSize: Self.itemSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
+    item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
     
-    let group = NSCollectionLayoutGroup.vertical(
+    let group = NSCollectionLayoutGroup.horizontal(
       layoutSize: Self.groupSize,
       subitem: item,
-      count: 1
+      count: 2
     )
     
     self.init(group: group)
@@ -33,5 +33,4 @@ class RecommendationsCollectionLayoutSection: NSCollectionLayoutSection {
 }
 
 // MARK: - Private
-extension RecommendationsCollectionLayoutSection {
-}
+extension RecommendationsCollectionLayoutSection {}
