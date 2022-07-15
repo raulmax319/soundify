@@ -27,6 +27,7 @@
 		F11BB95E28752A6D00F76EB3 /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB95D28752A6D00F76EB3 /* WelcomeCoordinator.swift */; };
 		F11BB96028752B5A00F76EB3 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB95F28752B5A00F76EB3 /* WelcomeViewController.swift */; };
 		F11BB96328752CAE00F76EB3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB96228752CAE00F76EB3 /* WelcomeView.swift */; };
+		F12AA9942881EEFB00AB2153 /* HomeSharedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AA9932881EEFB00AB2153 /* HomeSharedDelegate.swift */; };
 		F1300CB22880754E00C5FDDA /* FeaturedPlaylistsCollectionLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1300CB12880754E00C5FDDA /* FeaturedPlaylistsCollectionLayoutSection.swift */; };
 		F13C83C9287AFE9F006D85C7 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C83C8287AFE9F006D85C7 /* UIViewExtension.swift */; };
 		F13C83CF287B013D006D85C7 /* CircularStd-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CB287B013D006D85C7 /* CircularStd-Black.ttf */; };
@@ -34,6 +35,8 @@
 		F13C83D1287B013D006D85C7 /* CircularStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CD287B013D006D85C7 /* CircularStd-Book.ttf */; };
 		F13C83D2287B013D006D85C7 /* CircularStd-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CE287B013D006D85C7 /* CircularStd-Medium.ttf */; };
 		F13C83D4287B01AE006D85C7 /* UIFontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C83D3287B01AE006D85C7 /* UIFontExtension.swift */; };
+		F148E47E2881CA3700BD7815 /* PlaylistCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F148E47D2881CA3700BD7815 /* PlaylistCoordinator.swift */; };
+		F148E4802881CA4400BD7815 /* AlbumCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F148E47F2881CA4400BD7815 /* AlbumCoordinator.swift */; };
 		F16A4599287E24B8002B6CE6 /* SearchNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A4598287E24B8002B6CE6 /* SearchNavigationController.swift */; };
 		F16A459C287E24FA002B6CE6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A459B287E24FA002B6CE6 /* SearchViewController.swift */; };
 		F16A459E287E2501002B6CE6 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A459D287E2501002B6CE6 /* SearchView.swift */; };
@@ -121,6 +124,7 @@
 		F11BB95D28752A6D00F76EB3 /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
 		F11BB95F28752B5A00F76EB3 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		F11BB96228752CAE00F76EB3 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		F12AA9932881EEFB00AB2153 /* HomeSharedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSharedDelegate.swift; sourceTree = "<group>"; };
 		F1300CB12880754E00C5FDDA /* FeaturedPlaylistsCollectionLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsCollectionLayoutSection.swift; sourceTree = "<group>"; };
 		F13C83C8287AFE9F006D85C7 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F13C83CB287B013D006D85C7 /* CircularStd-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.ttf"; sourceTree = "<group>"; };
@@ -128,6 +132,8 @@
 		F13C83CD287B013D006D85C7 /* CircularStd-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Book.ttf"; sourceTree = "<group>"; };
 		F13C83CE287B013D006D85C7 /* CircularStd-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Medium.ttf"; sourceTree = "<group>"; };
 		F13C83D3287B01AE006D85C7 /* UIFontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtension.swift; sourceTree = "<group>"; };
+		F148E47D2881CA3700BD7815 /* PlaylistCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistCoordinator.swift; sourceTree = "<group>"; };
+		F148E47F2881CA4400BD7815 /* AlbumCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCoordinator.swift; sourceTree = "<group>"; };
 		F16A4598287E24B8002B6CE6 /* SearchNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNavigationController.swift; sourceTree = "<group>"; };
 		F16A459B287E24FA002B6CE6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		F16A459D287E2501002B6CE6 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -311,6 +317,7 @@
 		F11BB95A28752A2F00F76EB3 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F12AA9922881EEE700AB2153 /* Protocols */,
 				F16A45D7287E5A4A002B6CE6 /* ViewData */,
 				F16A45CC287E55FA002B6CE6 /* Views */,
 				F1BB02FD287D06FF004CB3E6 /* ViewModels */,
@@ -326,6 +333,8 @@
 				F11BB95D28752A6D00F76EB3 /* WelcomeCoordinator.swift */,
 				F1AAF91C28784E6C00CE7427 /* SignInCoordinator.swift */,
 				F1197AC6287B6CF100E614BB /* TabBarCoordinator.swift */,
+				F148E47D2881CA3700BD7815 /* PlaylistCoordinator.swift */,
+				F148E47F2881CA4400BD7815 /* AlbumCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -366,6 +375,14 @@
 				F11BB94C2875289800F76EB3 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F12AA9922881EEE700AB2153 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F12AA9932881EEFB00AB2153 /* HomeSharedDelegate.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		F1300CAD288074A800C5FDDA /* Cells */ = {
@@ -776,6 +793,7 @@
 				F1197AD8287BAF1900E614BB /* ProfileView.swift in Sources */,
 				F1AAF9202878768800CE7427 /* AccountModel.swift in Sources */,
 				F11BB96328752CAE00F76EB3 /* WelcomeView.swift in Sources */,
+				F148E47E2881CA3700BD7815 /* PlaylistCoordinator.swift in Sources */,
 				F16A45D6287E5868002B6CE6 /* NewReleasesLoader.swift in Sources */,
 				F16A45BF287E317C002B6CE6 /* ArtistModel.swift in Sources */,
 				F16A45B2287E2E3A002B6CE6 /* PlaylistViewController.swift in Sources */,
@@ -822,6 +840,7 @@
 				F1CDD1E3287F753500654A7B /* RecommendationsModel.swift in Sources */,
 				F1197AC9287B717300E614BB /* RefreshAccessToken.swift in Sources */,
 				F1197AC3287B638200E614BB /* HomeViewController.swift in Sources */,
+				F12AA9942881EEFB00AB2153 /* HomeSharedDelegate.swift in Sources */,
 				F1BECC2728762F85008EF0DF /* AuthenticationManager.swift in Sources */,
 				F16A459E287E2501002B6CE6 /* SearchView.swift in Sources */,
 				F1197AD6287BAF1200E614BB /* ProfileViewController.swift in Sources */,
@@ -840,6 +859,7 @@
 				F16A45C9287E3C10002B6CE6 /* AlbumDetailsLoader.swift in Sources */,
 				F13C83C9287AFE9F006D85C7 /* UIViewExtension.swift in Sources */,
 				F16A45CE287E5606002B6CE6 /* NewReleasesCollectionViewCell.swift in Sources */,
+				F148E4802881CA4400BD7815 /* AlbumCoordinator.swift in Sources */,
 				F16A45D4287E5795002B6CE6 /* NewReleasesViewModel.swift in Sources */,
 				F1197ACB287B802900E614BB /* GetUser.swift in Sources */,
 				F16A45B4287E2E62002B6CE6 /* PlaylistView.swift in Sources */,

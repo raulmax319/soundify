@@ -11,7 +11,7 @@ class HomeNavigationController: UINavigationController {
   init() {
     let homeVc = HomeViewController()
     homeVc.navigationItem.largeTitleDisplayMode = .always
-    homeVc.title = "Browse"
+    homeVc.title = "Made for you"
     
     super.init(rootViewController: homeVc)
     setupNavButton()
