@@ -74,7 +74,7 @@ extension HomeView {
       return NewReleasesViewData(
         name: $0.name,
         artworkUrl: URL(string: $0.images.first?.url ?? ""),
-        numberOfTracks: $0.totalTracks,
+        albumType: $0.albumType.rawValue,
         artistName: $0.artists.first?.name ?? ""
       )
     }))

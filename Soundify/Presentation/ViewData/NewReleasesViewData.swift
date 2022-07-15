@@ -10,6 +10,6 @@ import Foundation
 struct NewReleasesViewData {
   let name: String
   let artworkUrl: URL?
-  let numberOfTracks: Int
+  let albumType: String
   let artistName: String
 }
