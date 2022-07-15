@@ -98,6 +98,19 @@ extension HomeView {
 
 // MARK: - Public
 extension HomeView {
+  public func configureGradient() {
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.startPoint = .zero
+    gradientLayer.endPoint = CGPoint(x: 0.45, y: 1)
+    gradientLayer.colors = [
+      UIColor(red: CGFloat.random(in: 0...255) / 255, green: CGFloat.random(in: 0...255) / 255, blue: CGFloat.random(in: 0...255) / 255, alpha: 1).cgColor,
+      UIColor(red: 34 / 255, green: 34 / 255, blue: 34 / 255, alpha: 1).cgColor,
+    ]
+    
+    self.layer.insertSublayer(gradientLayer, at: 0)
+    gradientLayer.frame = self.bounds
+  }
+  
   public func fetchData() {
     var newReleases: NewReleasesModel?
     var featuredPlaylists: FeaturedPlaylistsModel?
@@ -190,124 +203,14 @@ extension HomeView {
   static func createSectionLayout(for section: Int) -> NSCollectionLayoutSection {
     switch section {
     case 0:
-      return HomeView.makeFirstSection()
+      return NewReleasesCollectionLayoutSection()
     case 1:
-      return HomeView.makeSecondSection()
+      return FeaturedPlaylistsCollectionLayoutSection()
     case 2:
-      return HomeView.makeThirdSection()
+      return RecommendationsCollectionLayoutSection()
     default:
-      return HomeView.makeDefaultSection()
+      // This case doesnt actually happen but switch must be exhaustive
+      return FeaturedPlaylistsCollectionLayoutSection()
     }
-  }
-  
-  static func makeFirstSection() -> NSCollectionLayoutSection {
-    let itemLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .fractionalWidth(1.0),
-      heightDimension: .fractionalHeight(1.0)
-    )
-    let item = NSCollectionLayoutItem(layoutSize: itemLayoutSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-    
-    let verticalGroupLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .fractionalWidth(1.0),
-      heightDimension: .fractionalWidth(1.0)
-    )
-    let verticalGroup = NSCollectionLayoutGroup.vertical(
-      layoutSize: verticalGroupLayoutSize,
-      subitem: item,
-      count: 3
-    )
-    let horizontalGroupLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .fractionalWidth(1.0),
-      heightDimension: .fractionalWidth(1.0)
-    )
-    let horizontalGroup = NSCollectionLayoutGroup.horizontal(
-      layoutSize: horizontalGroupLayoutSize,
-      subitem: verticalGroup,
-      count: 1
-    )
-    
-    let section = NSCollectionLayoutSection(group: horizontalGroup)
-    section.orthogonalScrollingBehavior = .groupPaging
-    return section
-  }
-  
-  static func makeSecondSection() -> NSCollectionLayoutSection {
-    let size = 200.0
-    let itemLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .estimated(size),
-      heightDimension: .estimated(size)
-    )
-    let item = NSCollectionLayoutItem(layoutSize: itemLayoutSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-    
-    let verticalGroupLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .estimated(size),
-      heightDimension: .estimated(size * 2)
-    )
-    let verticalGroup = NSCollectionLayoutGroup.vertical(
-      layoutSize: verticalGroupLayoutSize,
-      subitem: item,
-      count: 2
-    )
-    
-    let horizontalGroupLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .estimated(size),
-      heightDimension: .estimated(size * 2)
-    )
-    let horizontalGroup = NSCollectionLayoutGroup.horizontal(
-      layoutSize: horizontalGroupLayoutSize,
-      subitem: verticalGroup,
-      count: 1
-    )
-    
-    let section = NSCollectionLayoutSection(group: horizontalGroup)
-    section.orthogonalScrollingBehavior = .continuous
-    return section
-  }
-  
-  static func makeThirdSection() -> NSCollectionLayoutSection {
-    let itemLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .fractionalWidth(1.0),
-      heightDimension: .fractionalHeight(1.0)
-    )
-    let item = NSCollectionLayoutItem(layoutSize: itemLayoutSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-    
-    let groupSize = NSCollectionLayoutSize(
-      widthDimension: .fractionalWidth(1.0),
-      heightDimension: .estimated(80)
-    )
-    let group = NSCollectionLayoutGroup.vertical(
-      layoutSize: groupSize,
-      subitem: item,
-      count: 1
-    )
-    
-    let section = NSCollectionLayoutSection(group: group)
-    section.orthogonalScrollingBehavior = .continuous
-    return section
-  }
-  
-  static func makeDefaultSection() -> NSCollectionLayoutSection {
-    let itemLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .fractionalWidth(1.0),
-      heightDimension: .fractionalHeight(1.0)
-    )
-    let item = NSCollectionLayoutItem(layoutSize: itemLayoutSize)
-    item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 2)
-    
-    let verticalGroupLayoutSize = NSCollectionLayoutSize(
-      widthDimension: .fractionalWidth(1.0),
-      heightDimension: .fractionalWidth(1.0)
-    )
-    let group = NSCollectionLayoutGroup.vertical(
-      layoutSize: verticalGroupLayoutSize,
-      subitem: item,
-      count: 1
-    )
-    
-    let section = NSCollectionLayoutSection(group: group)
-    return section
   }
 }
