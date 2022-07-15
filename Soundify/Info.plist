@@ -2,22 +2,40 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIApplicationSceneManifest</key>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CircularStd-Black.ttf</string>
+		<string>CircularStd-Bold.ttf</string>
+		<string>CircularStd-Book.ttf</string>
+		<string>CircularStd-Medium.ttf</string>
+	</array>
+	<key>SCOPES</key>
+	<array>
+		<string>user-read-private</string>
+		<string>playlist-modify-public</string>
+		<string>playlist-read-private</string>
+		<string>playlist-modify-private</string>
+		<string>user-follow-read</string>
+		<string>user-library-modify</string>
+		<string>user-library-read</string>
+		<string>user-read-email</string>
+	</array>
+	<key>CLIENT_SECRET</key>
+	<string>$(CLIENT_SECRET)</string>
+	<key>CLIENT_ID</key>
+	<string>$(CLIENT_ID)</string>
+	<key>HTTP_URLS</key>
 	<dict>
-		<key>UIApplicationSupportsMultipleScenes</key>
-		<false/>
-		<key>UISceneConfigurations</key>
-		<dict>
-			<key>UIWindowSceneSessionRoleApplication</key>
-			<array>
-				<dict>
-					<key>UISceneConfigurationName</key>
-					<string>Default Configuration</string>
-					<key>UISceneDelegateClassName</key>
-					<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-				</dict>
-			</array>
-		</dict>
+		<key>AUTH_URL</key>
+		<string>${AUTH_URL}</string>
+		<key>REDIRECT_URL</key>
+		<string>${REDIRECT_URL}</string>
+		<key>BASE_URL</key>
+		<string>${BASE_URL}</string>
 	</dict>
+	<key>ENV</key>
+	<string>${CONFIGURATION}</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleLightContent</string>
 </dict>
 </plist>
