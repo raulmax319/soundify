@@ -24,8 +24,19 @@ class HomeView: UIView {
     return collectionView
   }()
   
+  /// this var is used to carry the data when navigating
+  /// to the Recommended Album
+  private var albums: [AlbumModel] = []
+  /// this var is used to carry the data when navigating
+  /// to the Recommended Playlist Screen
+  private var playlists: [PlaylistItemModel] = []
+  /// this var is used to carry the data when navigating
+  /// to the Recommended Tracks Screen
+  private var tracks: [AudioTrackModel] = []
+  
   /// Sections of the Home View
   private var sections = [BrowseSectionType]()
+  weak var delegate: HomeSharedDelegate?
   
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -142,13 +153,32 @@ extension HomeView {
       }
       
       await MainActor.run {
+        self.albums = albums
+        self.playlists = playlists
+        self.tracks = tracks
         self.configureModels(album: albums, playlists: playlists, tracks: tracks)
       }
     } // Task
   }
 }
 
-extension HomeView: UICollectionViewDelegate {}
+extension HomeView: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    collectionView.deselectItem(at: indexPath, animated: true)
+    
+    switch sections[indexPath.section] {
+    case .featuredPlaylists:
+      delegate?.navigateToPlaylistScreen(playlist: playlists[indexPath.row])
+      break
+    case .newReleases:
+      delegate?.navigateToAlbumScreen(album: albums[indexPath.row])
+      break
+    case .recommendedTracks:
+      delegate?.navigateToRecommendationsScreen(track: tracks[indexPath.row])
+      break
+    }
+  }
+}
 
 // MARK: - CollectionView Datasource
 extension HomeView: UICollectionViewDataSource {

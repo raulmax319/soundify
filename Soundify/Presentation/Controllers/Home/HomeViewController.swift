@@ -36,6 +36,7 @@ class HomeViewController: UIViewController {
     super.viewWillAppear(animated)
     
     homeView.fetchData()
+    homeView.delegate = self
   }
 }
 
@@ -43,4 +44,18 @@ extension HomeViewController {
   @objc func didTapSettings() {
     TabBarCoordinator(with: navigationController!).navigateToProfile()
   }
+}
+
+extension HomeViewController: HomeSharedDelegate {
+  func navigateToPlaylistScreen(playlist: PlaylistItemModel) {
+    let coordinator = PlaylistCoordinator(with: navigationController!, playlist: playlist)
+    coordinator.start()
+  }
+  
+  func navigateToAlbumScreen(album: AlbumModel) {
+    let coordinator = AlbumCoordinator(with: navigationController!, album: album)
+    coordinator.start()
+  }
+  
+  func navigateToRecommendationsScreen(track: AudioTrackModel) {}
 }
