@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
   lazy var homeView: HomeView = {
     let view = HomeView()
-    view.backgroundColor = .systemBackground
     
     return view
   }()
