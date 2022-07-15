@@ -16,7 +16,7 @@ class RecommendedTracksCollectionViewCell: UICollectionViewCell {
     imageView.layer.masksToBounds = true
     imageView.layer.cornerRadius = 8
     imageView.image = UIImage(systemName: "photo")
-    imageView.clipsToBounds = true
+    imageView.contentMode = .scaleAspectFill
     
     return imageView
   }()
@@ -24,9 +24,10 @@ class RecommendedTracksCollectionViewCell: UICollectionViewCell {
   private lazy var trackNameLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
-    label.numberOfLines = 0
-    label.lineBreakMode = .byWordWrapping
-    label.font = .bold(ofSize: 18)
+    label.numberOfLines = 1
+    label.font = UIFont.bold(ofSize: 16)
+    label.lineBreakMode = .byTruncatingTail
+    label.textColor = .secondaryLabel
     
     return label
   }()
@@ -35,8 +36,8 @@ class RecommendedTracksCollectionViewCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.numberOfLines = 0
-    label.lineBreakMode = .byWordWrapping
-    label.font = .bold(ofSize: 18)
+    label.font = UIFont.regular(ofSize: 14)
+    label.textColor = .secondaryLabel
     
     return label
   }()
@@ -60,15 +61,9 @@ class RecommendedTracksCollectionViewCell: UICollectionViewCell {
   override func prepareForReuse() {
     super.prepareForReuse()
     
-    albumCoverImage.image = nil
     trackNameLabel.text = nil
     artistNameLabel.text = nil
-  }
-  
-  public func configure(with viewData: RecommendedTracksViewData) {
-    trackNameLabel.text = viewData.name
-    artistNameLabel.text = viewData.artistName
-    albumCoverImage.sd_setImage(with: viewData.artworkUrl)
+    albumCoverImage.image = nil
   }
 }
 
@@ -76,7 +71,6 @@ class RecommendedTracksCollectionViewCell: UICollectionViewCell {
 extension RecommendedTracksCollectionViewCell {
   private func configureSubViews() {
     contentView.clipsToBounds = true
-    contentView.backgroundColor = .secondarySystemBackground
     contentView.addSubview(albumCoverImage)
     contentView.addSubview(trackNameLabel)
     contentView.addSubview(artistNameLabel)
@@ -84,7 +78,25 @@ extension RecommendedTracksCollectionViewCell {
   
   private func configureConstraints() {
     NSLayoutConstraint.activate([
-      
+      albumCoverImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      albumCoverImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+      albumCoverImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+      albumCoverImage.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+      albumCoverImage.heightAnchor.constraint(equalTo: contentView.widthAnchor),
+      trackNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      trackNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+      trackNameLabel.topAnchor.constraint(equalTo: albumCoverImage.bottomAnchor, constant: 10),
+      artistNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      artistNameLabel.topAnchor.constraint(equalTo: trackNameLabel.bottomAnchor),
     ])
+  }
+}
+
+// MARK: - Public
+extension RecommendedTracksCollectionViewCell {
+  public func configure(with viewData: RecommendedTracksViewData) {
+    trackNameLabel.text = viewData.name
+    artistNameLabel.text = viewData.artistName
+    albumCoverImage.sd_setImage(with: viewData.artworkUrl)
   }
 }

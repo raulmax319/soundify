@@ -25,9 +25,9 @@ class FeaturedPlaylistsCollectionViewCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.numberOfLines = 1
-    label.textAlignment = .center
-    label.font = UIFont.regular(ofSize: 16)
-    label.lineBreakMode = .byTruncatingMiddle
+    label.font = UIFont.bold(ofSize: 16)
+    label.lineBreakMode = .byTruncatingTail
+    label.textColor = .secondaryLabel
     
     return label
   }()
@@ -36,8 +36,8 @@ class FeaturedPlaylistsCollectionViewCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.numberOfLines = 0
-    label.textAlignment = .center
     label.font = UIFont.regular(ofSize: 14)
+    label.textColor = .secondaryLabel
     
     return label
   }()
@@ -83,7 +83,8 @@ extension FeaturedPlaylistsCollectionViewCell {
       playlistCoverImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
       playlistCoverImageView.widthAnchor.constraint(equalTo: contentView.widthAnchor),
       playlistCoverImageView.heightAnchor.constraint(equalTo: contentView.widthAnchor),
-      playlistNameLabel.leadingAnchor.constraint(equalTo: playlistCoverImageView.leadingAnchor),
+      playlistNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      playlistNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       playlistNameLabel.topAnchor.constraint(equalTo: playlistCoverImageView.bottomAnchor, constant: 10),
       creatorNameLabel.leadingAnchor.constraint(equalTo: playlistNameLabel.leadingAnchor),
       creatorNameLabel.topAnchor.constraint(equalTo: playlistNameLabel.bottomAnchor),

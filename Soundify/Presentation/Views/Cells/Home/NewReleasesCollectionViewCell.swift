@@ -14,8 +14,10 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
   private lazy var albumCoverImage: UIImageView = {
     let imageView = UIImageView()
     imageView.translatesAutoresizingMaskIntoConstraints = false
+    imageView.layer.masksToBounds = true
+    imageView.layer.cornerRadius = 8
     imageView.image = UIImage(systemName: "photo")
-    imageView.clipsToBounds = true
+    imageView.contentMode = .scaleAspectFill
     
     return imageView
   }()
@@ -23,9 +25,19 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
   private lazy var albumNameLabel: UILabel = {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
+    label.numberOfLines = 1
+    label.font = UIFont.regular(ofSize: 16)
+    label.lineBreakMode = .byTruncatingTail
+    
+    return label
+  }()
+  
+  private lazy var albumTypeLabel: UILabel = {
+    let label = UILabel()
+    label.translatesAutoresizingMaskIntoConstraints = false
     label.numberOfLines = 0
-    label.lineBreakMode = .byWordWrapping
-    label.font = .regular(ofSize: 18)
+    label.font = UIFont.regular(ofSize: 14)
+    label.textColor = .secondaryLabel
     
     return label
   }()
@@ -34,16 +46,9 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
     let label = UILabel()
     label.translatesAutoresizingMaskIntoConstraints = false
     label.numberOfLines = 0
-    label.font = .medium(ofSize: 16)
-    
-    return label
-  }()
-  
-  private lazy var numberOfTracksLabel: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.numberOfLines = 0
-    label.font = .regular(ofSize: 16)
+    label.textAlignment = .center
+    label.font = UIFont.regular(ofSize: 14)
+    label.textColor = .secondaryLabel
     
     return label
   }()
@@ -68,16 +73,8 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
     super.prepareForReuse()
     
     albumNameLabel.text = nil
-    artistNameLabel.text = nil
-    numberOfTracksLabel.text = nil
+    albumTypeLabel.text = nil
     albumCoverImage.image = nil
-  }
-  
-  public func configure(with viewData: NewReleasesViewData) {
-    albumNameLabel.text = viewData.name
-    artistNameLabel.text = viewData.artistName
-    numberOfTracksLabel.text = "Tracks: \(viewData.numberOfTracks)"
-    albumCoverImage.sd_setImage(with: viewData.artworkUrl)
   }
 }
 
@@ -85,26 +82,36 @@ class NewReleasesCollectionViewCell: UICollectionViewCell {
 extension NewReleasesCollectionViewCell {
   private func configureSubViews() {
     contentView.clipsToBounds = true
-    contentView.backgroundColor = .secondarySystemBackground
-    contentView.addSubview(albumNameLabel)
     contentView.addSubview(albumCoverImage)
-    contentView.addSubview(numberOfTracksLabel)
+    contentView.addSubview(albumNameLabel)
+    contentView.addSubview(albumTypeLabel)
     contentView.addSubview(artistNameLabel)
   }
   
   private func configureConstraints() {
     NSLayoutConstraint.activate([
       albumCoverImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+      albumCoverImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
       albumCoverImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-      albumCoverImage.widthAnchor.constraint(equalTo: contentView.heightAnchor),
-      albumCoverImage.heightAnchor.constraint(equalTo: contentView.heightAnchor),
-      albumNameLabel.leadingAnchor.constraint(equalTo: albumCoverImage.trailingAnchor, constant: 5),
+      albumCoverImage.widthAnchor.constraint(equalTo: contentView.widthAnchor),
+      albumCoverImage.heightAnchor.constraint(equalTo: contentView.widthAnchor),
+      albumNameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
       albumNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-      albumNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 5),
-      artistNameLabel.leadingAnchor.constraint(equalTo: albumNameLabel.leadingAnchor),
-      artistNameLabel.topAnchor.constraint(equalTo: albumNameLabel.bottomAnchor),
-      numberOfTracksLabel.leadingAnchor.constraint(equalTo: albumNameLabel.leadingAnchor),
-      numberOfTracksLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5)
+      albumNameLabel.topAnchor.constraint(equalTo: albumCoverImage.bottomAnchor, constant: 10),
+      albumTypeLabel.leadingAnchor.constraint(equalTo: albumNameLabel.leadingAnchor),
+      albumTypeLabel.topAnchor.constraint(equalTo: albumNameLabel.bottomAnchor),
+      artistNameLabel.leadingAnchor.constraint(equalTo: albumTypeLabel.trailingAnchor),
+      artistNameLabel.centerYAnchor.constraint(equalTo: albumTypeLabel.centerYAnchor)
     ])
+  }
+}
+
+// MARK: - Public
+extension NewReleasesCollectionViewCell {
+  public func configure(with viewData: NewReleasesViewData) {
+    albumNameLabel.text = viewData.name
+    artistNameLabel.text = viewData.artistName
+    albumTypeLabel.text = "\(viewData.albumType.capitalized) • "
+    albumCoverImage.sd_setImage(with: viewData.artworkUrl)
   }
 }
