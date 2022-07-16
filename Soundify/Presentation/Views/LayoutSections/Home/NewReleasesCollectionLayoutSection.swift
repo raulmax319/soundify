@@ -17,6 +17,17 @@ class NewReleasesCollectionLayoutSection: NSCollectionLayoutSection {
     return NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.9), heightDimension: .fractionalWidth(1/1.5))
   }
   
+  private class var header: NSCollectionLayoutBoundarySupplementaryItem {
+    return NSCollectionLayoutBoundarySupplementaryItem(
+      layoutSize: NSCollectionLayoutSize(
+        widthDimension: .fractionalWidth(1.0),
+        heightDimension: .absolute(50)
+      ),
+      elementKind: UICollectionView.elementKindSectionHeader,
+      alignment: .topLeading
+    )
+  }
+  
   convenience init() {
     let item = NSCollectionLayoutItem(layoutSize: Self.itemSize)
     item.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
@@ -29,6 +40,7 @@ class NewReleasesCollectionLayoutSection: NSCollectionLayoutSection {
     
     self.init(group: group)
     orthogonalScrollingBehavior = .continuous
+    self.boundarySupplementaryItems = [Self.header]
   }
 }
 
