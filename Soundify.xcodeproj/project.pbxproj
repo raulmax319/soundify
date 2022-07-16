@@ -29,6 +29,7 @@
 		F11BB96328752CAE00F76EB3 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F11BB96228752CAE00F76EB3 /* WelcomeView.swift */; };
 		F12AA9942881EEFB00AB2153 /* HomeSharedDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12AA9932881EEFB00AB2153 /* HomeSharedDelegate.swift */; };
 		F1300CB22880754E00C5FDDA /* FeaturedPlaylistsCollectionLayoutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1300CB12880754E00C5FDDA /* FeaturedPlaylistsCollectionLayoutSection.swift */; };
+		F13738DF28834B600051B5F4 /* SectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13738DE28834B600051B5F4 /* SectionHeader.swift */; };
 		F13C83C9287AFE9F006D85C7 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C83C8287AFE9F006D85C7 /* UIViewExtension.swift */; };
 		F13C83CF287B013D006D85C7 /* CircularStd-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CB287B013D006D85C7 /* CircularStd-Black.ttf */; };
 		F13C83D0287B013D006D85C7 /* CircularStd-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F13C83CC287B013D006D85C7 /* CircularStd-Bold.ttf */; };
@@ -126,6 +127,7 @@
 		F11BB96228752CAE00F76EB3 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		F12AA9932881EEFB00AB2153 /* HomeSharedDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSharedDelegate.swift; sourceTree = "<group>"; };
 		F1300CB12880754E00C5FDDA /* FeaturedPlaylistsCollectionLayoutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedPlaylistsCollectionLayoutSection.swift; sourceTree = "<group>"; };
+		F13738DE28834B600051B5F4 /* SectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeader.swift; sourceTree = "<group>"; };
 		F13C83C8287AFE9F006D85C7 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		F13C83CB287B013D006D85C7 /* CircularStd-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Black.ttf"; sourceTree = "<group>"; };
 		F13C83CC287B013D006D85C7 /* CircularStd-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularStd-Bold.ttf"; sourceTree = "<group>"; };
@@ -414,6 +416,7 @@
 		F1300CB02880753300C5FDDA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F13738DE28834B600051B5F4 /* SectionHeader.swift */,
 				F1300CB12880754E00C5FDDA /* FeaturedPlaylistsCollectionLayoutSection.swift */,
 				F1D3F4B52881035E0003566D /* NewReleasesCollectionLayoutSection.swift */,
 				F1D3F4B7288105810003566D /* RecommendationsCollectionLayoutSection.swift */,
@@ -868,6 +871,7 @@
 				F1CDD1E9287F8F4F00654A7B /* RecommendationsLoader.swift in Sources */,
 				F16A45B9287E2EBC002B6CE6 /* SearchResultViewController.swift in Sources */,
 				F1CDD1EB287F8F6900654A7B /* RecommendationsViewModel.swift in Sources */,
+				F13738DF28834B600051B5F4 /* SectionHeader.swift in Sources */,
 				F1AAF92828787B2400CE7427 /* StorageClient.swift in Sources */,
 				F16A45CB287E41C9002B6CE6 /* Loader.swift in Sources */,
 				F17153972875EA8C00B6126B /* Response.swift in Sources */,
