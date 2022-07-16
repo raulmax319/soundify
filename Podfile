@@ -5,5 +5,5 @@ target 'Soundify' do
   use_frameworks!
 
   pod 'SDWebImage'
-  pod 'BubbleTask/Debug', :git => 'git@github.com:raulmax319/bubbletask.git', :tag => '0.2.1'
+  pod 'BubbleTask/Debug', :git => 'git@github.com:raulmax319/bubbletask.git', :tag => '0.3.0'
 end

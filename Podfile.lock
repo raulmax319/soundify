@@ -1,11 +1,11 @@
 PODS:
-  - BubbleTask/Debug (0.2.0)
+  - BubbleTask/Debug (0.3.0)
   - SDWebImage (5.13.0):
     - SDWebImage/Core (= 5.13.0)
   - SDWebImage/Core (5.13.0)
 
 DEPENDENCIES:
-  - "BubbleTask/Debug (from `git@github.com:raulmax319/bubbletask.git`, tag `0.2.1`)"
+  - "BubbleTask/Debug (from `git@github.com:raulmax319/bubbletask.git`, tag `0.3.0`)"
   - SDWebImage
 
 SPEC REPOS:
@@ -15,17 +15,17 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   BubbleTask:
     :git: "git@github.com:raulmax319/bubbletask.git"
-    :tag: 0.2.1
+    :tag: 0.3.0
 
 CHECKOUT OPTIONS:
   BubbleTask:
     :git: "git@github.com:raulmax319/bubbletask.git"
-    :tag: 0.2.1
+    :tag: 0.3.0
 
 SPEC CHECKSUMS:
-  BubbleTask: d62cd35f1d0de21714accee50807685da4e9a757
+  BubbleTask: f6f9eee612a3cfa60e15a4101a4dac5a2f4395c5
   SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
 
-PODFILE CHECKSUM: 1a2e44efbf5e5e0d6da7728bf4b43d57dd740b50
+PODFILE CHECKSUM: b121b0d7cacf891b3ef511b429ddac6caed7206b
 
 COCOAPODS: 1.11.3
