@@ -14,14 +14,38 @@ enum BrowseSectionType {
 }
 
 class HomeView: UIView {
-  let collectionView: UICollectionView = {
+  lazy var collectionView: UICollectionView = {
     let layout = UICollectionViewCompositionalLayout { sectionIndex, _ -> NSCollectionLayoutSection? in
       return HomeView.createSectionLayout(for: sectionIndex)
     }
     let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    collectionView.translatesAutoresizingMaskIntoConstraints = false
+    
+    collectionView.backgroundView = nil
+    collectionView.backgroundColor = .clear
     
     return collectionView
+  }()
+  
+  lazy var gradientLayer: CAGradientLayer = {
+    let gradientLayer = CAGradientLayer()
+    gradientLayer.type = .axial
+    gradientLayer.startPoint = .zero
+    gradientLayer.endPoint = CGPoint(x: 0.1, y: 1)
+    gradientLayer.locations = [0, 1]
+    gradientLayer.colors = [
+      UIColor(
+        red: CGFloat.random(in: 55...200) / 255,
+        green: CGFloat.random(in: 50...200) / 255,
+        blue: CGFloat.random(in: 50...120) / 255,
+        alpha: 1).cgColor,
+      UIColor(
+        red: 34 / 255,
+        green: 34 / 255,
+        blue: 34 / 255,
+        alpha: 1).cgColor,
+    ]
+    
+    return gradientLayer
   }()
   
   /// this var is used to carry the data when navigating
@@ -42,17 +66,38 @@ class HomeView: UIView {
     super.init(frame: frame)
     
     setupCollectionView()
+    setupGradient()
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    
+    setupCollectionViewSize()
+  }
 }
 
 // MARK: - Private
 extension HomeView {
+  private func setupCollectionViewSize() {
+    collectionView.frame = self.bounds
+    gradientLayer.frame = self.bounds
+  }
+  
+  private func setupGradient() {
+    self.layer.insertSublayer(gradientLayer, at: 0)
+  }
+  
   private func setupCollectionView() {
     addSubview(collectionView)
+    collectionView.register(
+      SectionHeader.self,
+      forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+      withReuseIdentifier: SectionHeader.kReuseIdentifier
+    )
     collectionView.register(
       NewReleasesCollectionViewCell.self,
       forCellWithReuseIdentifier: NewReleasesCollectionViewCell.kReuseIdentifier
@@ -67,13 +112,6 @@ extension HomeView {
     )
     collectionView.delegate = self
     collectionView.dataSource = self
-    
-    NSLayoutConstraint.activate([
-      collectionView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-      collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-      collectionView.topAnchor.constraint(equalTo: self.topAnchor),
-      collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-    ])
   }
   
   @MainActor private func configureModels(
@@ -109,19 +147,6 @@ extension HomeView {
 
 // MARK: - Public
 extension HomeView {
-  public func configureGradient() {
-    let gradientLayer = CAGradientLayer()
-    gradientLayer.startPoint = .zero
-    gradientLayer.endPoint = CGPoint(x: 0.45, y: 1)
-    gradientLayer.colors = [
-      UIColor(red: CGFloat.random(in: 0...255) / 255, green: CGFloat.random(in: 0...255) / 255, blue: CGFloat.random(in: 0...255) / 255, alpha: 1).cgColor,
-      UIColor(red: 34 / 255, green: 34 / 255, blue: 34 / 255, alpha: 1).cgColor,
-    ]
-    
-    self.layer.insertSublayer(gradientLayer, at: 0)
-    gradientLayer.frame = self.bounds
-  }
-  
   public func fetchData() {
     var newReleases: NewReleasesModel?
     var featuredPlaylists: FeaturedPlaylistsModel?
@@ -185,6 +210,7 @@ extension HomeView: UICollectionViewDataSource {
   func numberOfSections(in collectionView: UICollectionView) -> Int {
     return sections.count
   }
+  
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     switch sections[section] {
     case .newReleases(viewModel: let vm):
@@ -224,6 +250,35 @@ extension HomeView: UICollectionViewDataSource {
       ) as? RecommendedTracksCollectionViewCell else { return UICollectionViewCell() }
       cell.configure(with: viewModel[indexPath.row])
       return cell
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    switch sections[indexPath.section] {
+    case .featuredPlaylists:
+      let header = collectionView.dequeueReusableSupplementaryView(
+        ofKind: UICollectionView.elementKindSectionHeader,
+        withReuseIdentifier: SectionHeader.kReuseIdentifier,
+        for: indexPath
+      ) as! SectionHeader
+      header.configure(title: "Playlists")
+      return header
+    case .newReleases:
+      let header = collectionView.dequeueReusableSupplementaryView(
+        ofKind: UICollectionView.elementKindSectionHeader,
+        withReuseIdentifier: SectionHeader.kReuseIdentifier,
+        for: indexPath
+      ) as! SectionHeader
+      header.configure(title: "Made for you")
+      return header
+    case .recommendedTracks:
+      let header = collectionView.dequeueReusableSupplementaryView(
+        ofKind: UICollectionView.elementKindSectionHeader,
+        withReuseIdentifier: SectionHeader.kReuseIdentifier,
+        for: indexPath
+      ) as! SectionHeader
+      header.configure(title: "Recommended")
+      return header
     }
   }
 }
