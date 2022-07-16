@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
   
   override func loadView() {
     super.loadView()
-    
+
     view = homeView
   }
   

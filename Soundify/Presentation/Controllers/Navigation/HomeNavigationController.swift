@@ -10,8 +10,8 @@ import UIKit
 class HomeNavigationController: UINavigationController {
   init() {
     let homeVc = HomeViewController()
+    homeVc.title = "Browse"
     homeVc.navigationItem.largeTitleDisplayMode = .always
-    homeVc.title = "Made for you"
     
     super.init(rootViewController: homeVc)
     setupNavButton()
