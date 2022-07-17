@@ -1,0 +1,69 @@
+name: Soundify
+
+configs:
+  develop: debug
+  production: release
+
+options:
+  deploymentTarget:
+    iOS: 13.0
+  xcodeVersion: 13.0
+  bundleIdPrefix: com.raulmax319
+  postGenCommand: pod install
+configFiles:
+  develop: Env.xcconfig
+  production: Env.xcconfig
+
+targets:
+  Soundify:
+    type: application
+    platform: iOS
+    version: 0.0.1
+    build: 1
+    deploymentTarget: "13.0"
+    configFiles:
+      develop:
+        [
+          Env.xcconfig,
+          Pods/Target Support Files/Pods-Soundify/Pods-Soundify.debug.xcconfig,
+        ]
+      production:
+        [
+          Env.xcconfig,
+          Pods/Target Support Files/Pods-Soundify/Pods-Soundify.release.xcconfig,
+        ]
+    sources:
+      - path: Soundify
+    settings:
+      base:
+        INFOPLIST_FILE: Soundify/Info.plist
+        CLANG_CXX_LANGUAGE_STANDARD: "gnu++17"
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: 0.0.1
+        INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents: YES
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad: UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight
+        IPHONEOS_DEPLOYMENT_TARGET: 13.0
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+      configs:
+        develop:
+          CODE_SIGN_STYLE: Automatic
+          DEVELOPMENT_TEAM: AF72TWGFLX
+          GENERATE_INFOPLIST_FILE: YES
+          SWIFT_EMIT_LOC_STRINGS: YES
+          SWIFT_VERSION: 5.0
+          TARGETED_DEVICE_FAMILY: 1
+          AUTH_URL: https://accounts.spotify.com
+          BASE_URL: https://api.spotify.com/v1
+          REDIRECT_URL: https://raulmax319.netlify.app
+        production:
+          CODE_SIGN_STYLE: Automatic
+          DEVELOPMENT_TEAM: AF72TWGFLX
+          GENERATE_INFOPLIST_FILE: YES
+          SWIFT_EMIT_LOC_STRINGS: YES
+          SWIFT_VERSION: 5.0
+          TARGETED_DEVICE_FAMILY: 1
+          AUTH_URL: https://accounts.spotify.com
+          BASE_URL: https://api.spotify.com/v1
+          REDIRECT_URL: https://raulmax319.netlify.app
