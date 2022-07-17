@@ -203,6 +203,24 @@ extension HomeView: UICollectionViewDelegate {
       break
     }
   }
+  
+  func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+    let cell = collectionView.cellForItem(at: indexPath)
+    
+    UIView.animate(withDuration: 0.2) {
+      cell?.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+      cell?.layer.opacity = 0.75
+    }
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+    let cell = collectionView.cellForItem(at: indexPath)
+    
+    UIView.animate(withDuration: 0.2) {
+      cell?.transform = .identity
+      cell?.layer.opacity = 1
+    }
+  }
 }
 
 // MARK: - CollectionView Datasource
@@ -242,7 +260,7 @@ extension HomeView: UICollectionViewDataSource {
       cell.configure(with: viewModel[indexPath.row])
       return cell
     
-      /// Recommended Tracks View Data Supplier
+    /// Recommended Tracks View Data Supplier
     case .recommendedTracks(viewModel: let viewModel):
       guard let cell = collectionView.dequeueReusableCell(
         withReuseIdentifier: RecommendedTracksCollectionViewCell.kReuseIdentifier,
@@ -261,7 +279,7 @@ extension HomeView: UICollectionViewDataSource {
         withReuseIdentifier: SectionHeader.kReuseIdentifier,
         for: indexPath
       ) as! SectionHeader
-      header.configure(title: "Playlists")
+      header.configure(title: "Today's biggest hits")
       return header
     case .newReleases:
       let header = collectionView.dequeueReusableSupplementaryView(
