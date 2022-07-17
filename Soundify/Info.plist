@@ -2,13 +2,33 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>CircularStd-Black.ttf</string>
-		<string>CircularStd-Bold.ttf</string>
-		<string>CircularStd-Book.ttf</string>
-		<string>CircularStd-Medium.ttf</string>
-	</array>
+	<key>CFBundleDisplayName</key>
+	<string>Soundify</string>
+	<key>CFBundleExecutable</key>
+	<string>Soundify</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.raulmax319.Soundify</string>
+	<key>CFBundleName</key>
+	<string>Soundify</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>CLIENT_ID</key>
+	<string>$(CLIENT_ID)</string>
+	<key>CLIENT_SECRET</key>
+	<string>$(CLIENT_SECRET)</string>
+	<key>ENV</key>
+	<string>${CONFIGURATION}</string>
+	<key>HTTP_URLS</key>
+	<dict>
+		<key>AUTH_URL</key>
+		<string>${AUTH_URL}</string>
+		<key>BASE_URL</key>
+		<string>${BASE_URL}</string>
+		<key>REDIRECT_URL</key>
+		<string>${REDIRECT_URL}</string>
+	</dict>
 	<key>SCOPES</key>
 	<array>
 		<string>user-read-private</string>
@@ -20,22 +40,18 @@
 		<string>user-library-read</string>
 		<string>user-read-email</string>
 	</array>
-	<key>CLIENT_SECRET</key>
-	<string>$(CLIENT_SECRET)</string>
-	<key>CLIENT_ID</key>
-	<string>$(CLIENT_ID)</string>
-	<key>HTTP_URLS</key>
-	<dict>
-		<key>AUTH_URL</key>
-		<string>${AUTH_URL}</string>
-		<key>REDIRECT_URL</key>
-		<string>${REDIRECT_URL}</string>
-		<key>BASE_URL</key>
-		<string>${BASE_URL}</string>
-	</dict>
-	<key>ENV</key>
-	<string>${CONFIGURATION}</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>CircularStd-Black.ttf</string>
+		<string>CircularStd-Bold.ttf</string>
+		<string>CircularStd-Book.ttf</string>
+		<string>CircularStd-Medium.ttf</string>
+	</array>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleLightContent</string>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
 </dict>
 </plist>
